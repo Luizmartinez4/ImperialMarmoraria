@@ -60,6 +60,13 @@ function contarNumerosAntes(texto, posicao) {
 // Aplica a máscara com base nos dígitos e coloca o cursor na posição correta
 function aplicarMascara(numeros, forcarCursor = null) {
     const mascara = '(__) _____-____';
+
+    // Se não há nenhum número, deixa o input vazio e sai
+    if (!numeros || numeros.length === 0) {
+        celularInput.value = '';
+        return;
+    }
+
     let resultado = '';
     let i = 0;
     let posCursor = 0;
