@@ -1,0 +1,122 @@
+﻿.materiais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 90px;
+}
+
+    .materiais > figure {
+        width: 50%;
+        display: grid;
+        justify-items: center;
+    }
+
+        .materiais > figure > img {
+            width: 80%;
+        }
+
+    .materiais > div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .materiais div div {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .materiais h1 {
+        font-family: var(--fonte-subtitulo);
+        font-weight: 400;
+        font-size: 100px;
+    }
+
+    .materiais p {
+        font-family: var(--fonte-principal);
+        font-weight: 400;
+        font-size: 26;
+    }
+
+    .materiais div figure {
+        display: flex;
+        gap: 36px;
+    }
+
+        .materiais div figure img {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+        }
+
+@media(max-width: 1500px) {
+    .materiais h1 {
+        font-size: 60px;
+    }
+
+    .materiais div figure img {
+        width: 150px;
+        height: 150px;
+        border-radius: 15px;
+    }
+}
+
+@media(max-width: 1200px) {
+    .materiais {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+        .materiais > div {
+            width: 80%;
+        }
+
+        .materiais div figure {
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .materiais > figure > img {
+            width: 100%;
+        }
+
+        .materiais > div {
+            gap: 30px;
+        }
+
+        .materiais div figure img {
+            width: 200px;
+            height: 200px;
+        }
+}
+
+@media(max-width: 800px) {
+    .materiais {
+        padding: 80px 0;
+    }
+
+        .materiais div figure img {
+            width: 150px;
+            height: 150px;
+        }
+}
+
+@media(max-width: 500px) {
+    .materiais div figure img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media(max-width: 400px) {
+    .materiais > figure {
+        width: 80%;
+    }
+
+    .materiais div figure img {
+        width: 100px;
+        height: 100px;
+    }
+}

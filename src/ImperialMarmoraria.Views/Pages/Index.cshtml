@@ -1,0 +1,279 @@
+﻿@page
+@using ImperialMarmoraria.Views.Pages
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <script src="~/js/menu.js" defer></script>
+</head>
+<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
+<a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=35991893669&text=Oi!%20Quero%20fazer%20meu%20or%C3%A7amento">
+  <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
+</a>
+<body>
+    <header>
+        <div class="cabecalho">
+            <img src="~/assets/image 1.svg" alt="Logo da Imperial">  
+            <ul class="cabecalho-lista">
+                <li><a href="/Index">Inicio</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+                <li><a href="/servicos">Projetos</a></li>
+                <li><a href="#rodape">Contato</a></li>
+            </ul>
+
+            <div class="menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <ul class="cabecalho-lista-mobile">
+            <li><a href="/Index">Inicio</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+            <li><a href="/servicos">Projetos</a></li>
+            <li><a href="#rodape">Contato</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="banner">
+            <div>
+                <h1>Faça sua casa <br>
+                ser única</h1>
+                <p>Nós desenvolveremos o espaço perfeito para você,<br> refletindo seu estilo único</p>
+                <a href="/form">Solicite um orçamento</a>
+            </div>
+        </section>
+
+        <section class="detalhes">
+            <div class="detalhes__ipermeabilização">
+                <img src="~/assets/impermeabilizado 1.png">
+                <div class="detalhes__texto">
+                    <h2>Ipermeabilização</h2>
+                    <p>É importante ressaltar a
+                        eficácia do impermeabilizante
+                        em proteger pedras, evitando a
+                        penetração de resíduos e manchas.
+                        A Marmoraria Imperial oferece produtos
+                        já impermeabilizados e recomenda aos
+                        clientes adquiri-los para aplicação
+                        posterior ou contratar o serviço.</p>
+                </div>
+            </div>
+            <div class="detalhes__polimento">
+                <img src="~/assets/polimento 1.png">
+                <div class="detalhes__texto">
+                    <h2>Polimento</h2>
+                    <p>O polimento realça a durabilidade das pedras naturais e sua capacidade de serem polidas para restaurar seu brilho original quando sofrem desgaste ao longo do tempo. A empresa oferece o serviço de polimento e está disponível para fornecer orçamentos mediante contato.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="institucional">
+            <img class="banheiro1" src="~/assets/banheiros-16 1.png" alt="" >
+        
+            <div class="institucional__container">
+                <h1>Institucional</h1>
+
+                <p class="texto">Desde 2018 atuando no mercado, a <br>
+                Marmoraria Imperial destaca-se pela <br>
+                qualidade no acabamento, produtos e <br>
+                atendimento.
+                <br><br>
+                Nosso compromisso com o cliente vai <br>
+                    desde a escolha da matéria prima, <br>
+                    passando por processos de produção <br>
+                    precisos que refletem no resultado final do <br>
+                    projeto.</p>
+            </div>
+        </section>
+
+        <section>
+            <img src="~/assets/imgbanheiro.png" class="image-background">
+        </section>
+        
+        <section class="materiais">
+            <figure>
+                <img src="~/assets/granito.png" alt="Granito">
+            </figure>
+            <div>
+                <div>
+                    <h1>Granito</h1>
+                    <p>O granito é um tipo comum de rocha magmática, intrusiva ou plutónica de textura fina não metamórfica, média ou grosseira, composta essencialmente pelos minerais: quartzo, mica e feldspato, tendo como minerais acessórios mica, horneblenda, zircão e outros minerais.</p>
+                </div>
+
+                <figure>
+                    <img src="~/assets/marmore.jpg" alt="Marmore">
+                    <img src="~/assets/pdecorativa.jpg" alt="Pedra decorativa">
+                    <img src="~/assets/ardosia.jpg" alt="Ardosia">
+                </figure>
+            </div>
+        </section>
+
+        <section class="projetos">
+            <h1>Projetos</h1>
+            <div>
+                <div>
+                    <div>
+                        <img src="~/assets/play-button.svg" alt="Play">
+                        <p>Assista ao vídeo</p>
+                    </div>
+
+                    <h2>Cozinha</h2>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+
+                <div>
+                    <div>
+                        <img src="~/assets/play-button.svg" alt="Play">
+                        <p>Assista ao vídeo</p>
+                    </div>
+
+                    <h2>Área Gourmet</h2>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+
+                <div>
+                    <div>
+                        <img src="~/assets/sign-icon.svg" class="vermais" alt="Ver mais">
+                        <h3>Clique para ver mais!</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <img src="~/assets/69339795_978967465778434_1095677828298440704_n 1.png" class="image-background">
+        </section>
+
+        <section class="feedback">
+            <h1>Feedback De Clientes</h1>
+
+            <div>
+                <div>
+                    <img src="~/assets/foto homem 1.png">
+                    <p> Realizei um orçamento, comprei produtos e contratei o serviço de montagem, e fiquei muito satisfeito com a qualidade e pontualidade de todo o processo. Recomendo a todos os serviços da Marmoria Imperial, pois superaram minhas expectativas em todos os aspectos!.
+                </div>
+                <div>
+                    <img src="~/assets/fot mulher 1.png">
+                    <p>Fiquei extremamente satisfeita com o atendimento da Marmória Imperial! A equipe foi muito atenciosa e me ajudou a escolher os mármores perfeitos para a minha casa. Como arquiteta, sei a importância de escolher materiais de qualidade e, com certeza, encontrei tudo o que precisava aqui. O processo foi tranquilo e o resultado final superou as minhas expectativas. Recomendo a todos que buscam excelência e atendimento impecável!.</p></p>
+                </div>
+                <div>
+                    <img src="~/assets/foto homem 2 1.png">
+                    <p>Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Donec
+                        quis enim odio. Donec finibus gravida
+                        ante, ac varius justo gravida nec.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <a href=""><img src="~/assets/imgttk.png" alt="Icone do Tiktok"></a>
+            <a href=""><img src="~/assets/imgwpp.png" alt="Icone do Whatsapp"></a>
+            <a href=""><img src="~/assets/imginsta.png" alt="Icone do Instagram"></a>
+            <a href=""><img src="~/assets/imgfacebook.png" alt="Icone do Facebook"></a>
+        </div>
+
+        <div>
+            <h1><i>NAVEGAÇÃO</i></h1>
+            <ul>
+                <li>
+                    <img src="~/assets/imgInicio.png">
+                    <a href="/Index">Início</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgMateriais.png">
+                    <a href="/servicos">Materiais</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgProjetos.PNG">
+                    <a href="/servicos">Projetos</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgSobre.png">
+                    <a href="/sobre">Sobre</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgEmail.png">
+                    <a href="">Contato para orçamento</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h1><i>SERVIÇOS</i></h1>
+
+            <ul>
+                <li>
+                    <img src="~/assets/imgseta.png">
+                    <a href="">Granito</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgseta.png">
+                    <a href="">~/Mármores</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgseta.png">
+                    <a href="">~/Ardósia</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgseta.png">
+                    <a href="">Industrializados</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgseta.png">
+                    <a href="">Pedras decorativas</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgseta.png">
+                    <a href="">Montagem em porcelanatos</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h1><i>FUNCIONAMENTO</i></h1>
+
+            <ul>
+                <li>
+                    <img src="~/assets/imgLoc.png">
+                    <a href="">Rodovia São João /Pinhal SP-342 - Fazenda das Areias, São João da Boa Vista - SP</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgHorario.png">
+                    <a href="">Seg a Sex: 07:30-11:30 | 13:30-17:30</a>
+                </li>
+
+                <li>
+                    <img src="~/assets/imgHorario.png">
+                    <a href="">Sáb: 07:30-12:00</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

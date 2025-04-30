@@ -1,0 +1,53 @@
+﻿@page
+@model ImperialMarmoraria.Views.Pages.formModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link href="~/css/form.css" rel="stylesheet"/>
+</head>
+<body>
+    <main>
+        <section></section>
+        <div class="container">
+            <form id="orcamentoForm">
+                <h1>Faça seu orçamento</h1>
+                <div class="group">      
+                    <input type="text" id="nome" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Nome Completo</label>
+                </div>
+                <div class="group">      
+                    <input type="tel" id="celular" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Celular</label>
+                </div>
+                <div class="group">      
+                    <input type="email" id="email" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Email</label>
+                </div>
+                <div class="group">      
+                    <input type="text" id="descricao" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Descreva seu projeto</label>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="~/js/Api/ApiSubmit/FormSubmit.js"></script>
+</body>
+</html>

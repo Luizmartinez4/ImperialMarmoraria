@@ -1,0 +1,257 @@
+﻿* {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    background-image: url("../assets/form_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    z-index: 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        filter: blur(5px); /* Ajuste o valor para o nível de desfoque desejado */
+        z-index: 0; /* Para garantir que o conteúdo fique sobre o fundo desfocado */
+    }
+
+main {
+    width: 90%;
+    height: 800px;
+    background-color: #fff;
+    z-index: 1;
+    display: flex;
+    box-shadow: 10px 10px 40px;
+}
+
+section {
+    width: 45%;
+    background-image: url("../assets/form_image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    width: 55%;
+    background-color: #f1ebeb;
+    margin: 0;
+    z-index: -4;
+    padding: 4% 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 20px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+    background: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 15px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 300px;
+}
+
+    .bar:before, .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #5264AE;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+
+    .bar:before {
+        left: 50%;
+    }
+
+    .bar:after {
+        right: 50%;
+    }
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+button {
+    padding: 15px;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    background-color: #0B108C;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 30px;
+    align-self: center;
+}
+
+    button:hover {
+        background-color: #060842;
+        transition: 0.2s;
+    }
+
+.bottom-login {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+@media(max-width: 700px) {
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        height: 400px;
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+        padding: 30px 0;
+    }
+
+    input {
+        width: 90%;
+    }
+}
+
+@media(max-width: 400px) {
+    body {
+        background-color: #f1ebeb;
+        background-image: none;
+    }
+
+    main {
+        height: 100%;
+        width: 100%;
+        box-shadow: 5px 0 10px;
+    }
+
+    section {
+        height: 200px;
+    }
+}

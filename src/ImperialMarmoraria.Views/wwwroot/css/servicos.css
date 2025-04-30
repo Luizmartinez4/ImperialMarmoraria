@@ -1,0 +1,93 @@
+﻿.servicos {
+    background-color: #f4f4f4;
+    padding-bottom: 80px;
+}
+
+    .servicos h1 {
+        padding: 40px 0;
+        text-align: center;
+        font-family: var(--fonte-subtitulo);
+        font-weight: 400;
+        font-size: 90px;
+    }
+
+        .servicos h1 span {
+            font-family: var(--fonte-principal);
+            font-weight: 300;
+        }
+
+    .servicos > div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+        column-gap: 40px;
+        row-gap: 80px;
+        padding: 40px 80px 0;
+    }
+
+    .servicos img {
+        width: 435px;
+        height: 260px;
+    }
+
+    .servicos p {
+        font-family: var(--fonte-subtitulo);
+        font-weight: 400;
+        font-size: 32px;
+        padding-top: 10px;
+        text-transform: uppercase;
+    }
+
+@media(max-width: 1550px) {
+    .servicos > div {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        padding: 40px 500px 0;
+    }
+}
+
+@media(max-width: 1000px) {
+    .servicos > div {
+        display: flex;
+        overflow-x: auto;
+        justify-content: start;
+        padding: 40px 20px 10px;
+        margin: 0 20px;
+    }
+
+        .servicos > div::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .servicos > div::-webkit-scrollbar-track {
+            background: rgb(230, 230, 230);
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .servicos > div::-webkit-scrollbar-thumb {
+            background-color: gray;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+    .servicos h1 {
+        font-size: 70px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .servicos h1 {
+        font-size: 40px;
+    }
+
+    .servicos p {
+        font-size: 20px;
+    }
+
+    .servicos img {
+        width: 300px;
+        height: 180px;
+    }
+}

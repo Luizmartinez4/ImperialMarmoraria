@@ -1,0 +1,228 @@
+﻿
+main {
+    background-image: url("../assets/background-login.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+    main::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        filter: blur(10px); /* Ajuste o valor para o nível de desfoque desejado */
+        z-index: 0; /* Para garantir que o conteúdo fique sobre o fundo desfocado */
+    }
+
+.login-container {
+    display: flex;
+    background-color: #e9ecf0;
+    width: 450px;
+    height: 450px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    justify-content: center;
+}
+
+.flex-login {
+    width: 100%;
+}
+
+.user-pass-text {
+    margin: -20px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .user-pass-text div {
+        align-items: center;
+        gap: 7px;
+        display: flex;
+        height: 40px;
+    }
+
+        .user-pass-text div input {
+            width: 15px;
+            height: 100%;
+        }
+
+.flex-login input {
+    font-size: 18px;
+    padding: 10px 10px 20px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+    background: 0;
+    box-sizing: border-box;
+}
+
+form {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 15px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #6374b8;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 300px;
+}
+
+    .bar:before, .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #5264AE;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+
+    .bar:before {
+        left: 50%;
+    }
+
+    .bar:after {
+        right: 50%;
+    }
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+button {
+    padding: 15px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0B108C;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+    button:hover {
+        background-color: #060842;
+        transition: 0.2s;
+    }
+
+.bottom-login {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+@media(max-width: 550px) {
+    .login-container {
+        width: 300px;
+    }
+
+    .user-pass-text {
+        flex-direction: column;
+    }
+
+    .form-link {
+        margin-bottom: 10px;
+    }
+}
