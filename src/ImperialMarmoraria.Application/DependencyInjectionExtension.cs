@@ -16,7 +16,7 @@ public static class DependencyInjectionExtension
         services.AddAutoMapper(typeof(AutoMapping));
     }
 
-    public static void AddUseCases(IServiceCollection services)
+    private static void AddUseCases(IServiceCollection services)
     {
         services.AddScoped<IRegistraOrcamento, RegistraOrcamento>();
     }
