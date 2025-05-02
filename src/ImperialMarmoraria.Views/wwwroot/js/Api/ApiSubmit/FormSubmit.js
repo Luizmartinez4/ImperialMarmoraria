@@ -112,6 +112,7 @@ orcamentoForm.onsubmit = async (e) => {
         const email = emailInput.value
         const descricao = descricaoInput.value
 
+        // envia as informações
         await orcamentoNew({ nome, celular, email, descricao })
 
     } catch (e) {

@@ -16,35 +16,50 @@
     <main>
         <section></section>
         <div class="container">
-            <form id="orcamentoForm">
+            <div class="carregamento" id="carregamento">
+                <div class="carregamento_dot"></div>
+                <div class="carregamento_dot"></div>
+                <div class="carregamento_dot"></div>
+                <div class="carregamento_dot"></div>
+                <div class="carregamento_dot"></div>
+            </div>
+            <form id="orcamentoForm" novalidate>
                 <h1>Faça seu orçamento</h1>
                 <div class="group">      
                     <input type="text" id="nome" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Nome Completo</label>
+                    <div class="error_message" id="error_nome"></div>
                 </div>
                 <div class="group">      
                     <input type="tel" id="celular" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Celular</label>
+                    <div class="error_message" id="error_celular"></div>
                 </div>
                 <div class="group">      
                     <input type="email" id="email" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Email</label>
+                    <div class="error_message" id="error_email"></div>
                 </div>
                 <div class="group">      
                     <input type="text" id="descricao" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Descreva seu projeto</label>
+                    <div class="error_message" id="error_descricao"></div>
                 </div>
 
                 <button type="submit">Enviar</button>
             </form>
+
+            <canvas id="relogio" width="150" height="150"></canvas>
+            
+            <p id="check_message">O seu pedido foi computado e será respondido em breve! Verifique sua caixa de e-mail!</p>
         </div>
     </main>
 
