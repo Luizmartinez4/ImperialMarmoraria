@@ -1,4 +1,5 @@
 ﻿using ImperialMarmoraria.Application.UseCases.Email;
+using ImperialMarmoraria.Communication.Requests.Email;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ImperialMarmoraria.Api.Controllers
@@ -7,22 +8,16 @@ namespace ImperialMarmoraria.Api.Controllers
     [Route("api/[controller]")]
     public class EmailController : ControllerBase
     {
-        private readonly IEmailUseCase _useCase;
-
-        public EmailController(IEmailUseCase useCase)
-        {
-            _useCase = useCase;
-        }
-
         [HttpPost("send")]
-        public async Task<IActionResult> Send()
+        public async Task<IActionResult> Send([FromServices] IEmailUseCase useCase,
+            [FromBody] RequestEmailJson receiver)
         {
-            var receiver = "cofes39489@inkight.com";
-            var subject = "Bem-vindo!";
-            var message = "Email enviado automaticamente pela view.";
+            var subject = "Não responda este email";
+            var message = "Sua solicitação foi recebida e será analisada, responderemos sua solicitação via whatsapp ou email em breve! Agradecemos a sua preferência!";
 
-            await _useCase.SendEmailAsync(receiver, subject, message);
+            await useCase.SendEmailAsync(receiver, subject, message);
             return Ok("Email enviado");
+
         }
     }
 }

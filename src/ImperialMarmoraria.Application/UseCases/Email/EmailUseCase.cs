@@ -1,4 +1,5 @@
 ﻿
+using ImperialMarmoraria.Communication.Requests.Email;
 using ImperialMarmoraria.Domain.Repositories.Orcamentos;
 using System.Net;
 using System.Net.Mail;
@@ -7,17 +8,10 @@ namespace ImperialMarmoraria.Application.UseCases.Email
 {
     public class EmailUseCase : IEmailUseCase
     {
-        private readonly IOrcamentosRepository _repository;
-
-        public EmailUseCase(IOrcamentosRepository repository)
+        public Task SendEmailAsync(RequestEmailJson email, string subject, string message)
         {
-            _repository = repository;
-        }
-
-        public Task SendEmailAsync(string email, string subject, string message)
-        {
-            var mail = "leonardo.tonetto@sou.fae.br";
-            var pw = "";
+            var mail = "neamgames@gmail.com";
+            var pw = "izrc ijta wjjj njrh";
 
             var client = new SmtpClient("smtp.gmail.com", 587)
             {
@@ -27,7 +21,7 @@ namespace ImperialMarmoraria.Application.UseCases.Email
 
             return client.SendMailAsync(
                 new MailMessage(from: mail,
-                                to: email,
+                                to: email.Email,
                                 subject,
                                 message));
         }

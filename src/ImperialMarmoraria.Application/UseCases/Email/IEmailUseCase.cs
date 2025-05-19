@@ -1,7 +1,9 @@
-﻿namespace ImperialMarmoraria.Application.UseCases.Email
+﻿using ImperialMarmoraria.Communication.Requests.Email;
+
+namespace ImperialMarmoraria.Application.UseCases.Email
 {
     public interface IEmailUseCase
     {
-        Task SendEmailAsync(string email, string subject, string message);
+        Task SendEmailAsync(RequestEmailJson email, string subject, string message);
     }
 }

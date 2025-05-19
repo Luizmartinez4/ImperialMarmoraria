@@ -1,5 +1,6 @@
 ﻿import { apiConfig } from "../ApiConfig.js"
 import { draw } from "../../CheckAnimation.js"
+import { enviaEmail } from "../ApiSubmit/enviaEmail.js"
 
 const errorNome = document.getElementById("error_nome")
 const errorCelular = document.getElementById("error_celular")
@@ -67,7 +68,8 @@ export async function orcamentoNew({ nome, celular, email, descricao }) {
             orcamentoForm.style.display = "none"
             carregamento.style.display = "none"
             canvas.style.display = "block"
-            draw();
+            draw()
+            enviaEmail({ email })
         }
 
     } catch (e) {

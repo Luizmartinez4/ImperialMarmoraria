@@ -25,7 +25,7 @@ public static class DependencyInjectionExtension
     {
         var connectionString = configuration.GetConnectionString("Connection");
 
-        var version = new Version(8, 0, 41);
+        var version = new Version(8, 1, 0);
         var serverVersion = new MySqlServerVersion(version);
 
         services.AddDbContext<ImperialMarmorariaDbContext>(
