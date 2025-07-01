@@ -20,62 +20,130 @@
         <a href="#">Sair</a>
     </section>
     <main>
-        <div class="table-header">a</div>
-        <table class="table-fill">
-            <thead>
-                <tr>
-                    <th class="text-left"></th>
-                    <th class="text-left">Nome</th>
-                    <th class="text-left">Data entrada</th>
-                    <th class="text-left">Status</th>
-                    <th class="text-left">Orçamento</th>
-                    <th class="text-left">Data finalizado</th>
-                </tr>
-            </thead>
-            <tbody class="table-hover">
-                <tr>
-                    <td class="text-left">1</td>
-                    <td class="text-left">Fulano da Silva</td>
-                    <td class="text-left">31/03/2025</td>
-                    <td class="text-left">Novo</td>
-                    <td class="text-left">R$5000,00</td>
-                    <td class="text-left"></td>
-                </tr>
-                <tr>
-                    <td class="text-left">2</td>
-                    <td class="text-left">Ciclano da Silva</td>
-                    <td class="text-left">25/03/2025</td>
-                    <td class="text-left">Em andamento</td>
-                    <td class="text-left">R$7000,00</td>
-                    <td class="text-left"></td>
-                </tr>
-                <tr>
-                    <td class="text-left">3</td>
-                    <td class="text-left">Fulano da Silva</td>
-                    <td class="text-left">21/03/2025</td>
-                    <td class="text-left">Em andamento</td>
-                    <td class="text-left">R$2000,00</td>
-                    <td class="text-left"></td>
-                </tr>
-                <tr>
-                    <td class="text-left">4</td>
-                    <td class="text-left">Ciclano da Silva</td>
-                    <td class="text-left">15/03/2025</td>
-                    <td class="text-left">Finalizado</td>
-                    <td class="text-left">R$4000,00</td>
-                    <td class="text-left">14/03/2025</td>
-                </tr>
-                <tr>
-                    <td class="text-left">5</td>
-                    <td class="text-left">Fulano da Silva</td>
-                    <td class="text-left">26/02/2025</td>
-                    <td class="text-left">Finalizado</td>
-                    <td class="text-left">R$1000,00</td>
-                    <td class="text-left">09/03/2025</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="table-footer">b</div>
+        <div class="table-fill">
+            <div>
+                <p></p>
+                <p>Nome</p>
+                <p>Data entrada</p>
+                <p>Status</p>
+                <p>Orçamento</p>
+                <p>Data finalizado</p>
+            </div>
+            <div class="table-hover">
+                <div>
+                    <div class="orcamento table-gray">
+                        <p>1</p>
+                        <p>Fulano da Silva</p>
+                        <p>31/03/2025</p>
+                        <p>Novo</p>
+                        <p>R$ 5000,00</p>
+                        <p></p>
+                    </div>
+                    <form>
+                        <div>
+                            <div>
+                                <label for="nome">Nome completo:</label>
+                                <input type="text" value="Fulano da Silva" readonly>
+                            </div>
+
+                            <div class="table-email">
+                                <label for="email">Email:</label>
+                                <input type="text" value="fulanodasilva@gmail.com" readonly>
+                            </div>
+
+                            <div>
+                                <label for="telefone">Telefone:</label>
+                                <input type="text" value="(99) 99999-9999" readonly>
+                            </div>
+                        </div>
+
+
+                        <div>
+
+                            <div>
+                                <label for="orcamento">Orcamento: </label>
+                                <input type="text" value="R$ 5000,00" readonly>
+                            </div>
+
+                            <div>
+                                <label for="status">Status: </label>
+                                <select name="status" id="status">
+                                    <option value="novo">Novo</option>
+                                    <option value="em andamento">Em andamento</option>
+                                    <option value="finalizado">Finalizado</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="dataEntrada">Data de entrada:</label>
+                                <input type="text" value="31/03/2025" readonly>
+                            </div>
+
+                            <div>
+                                <label for="dataFim">Data de finalização:</label>
+                                <input type="text" value="31/03/2025" readonly>
+                            </div>
+                        </div>
+
+                        <label for="descricao">Descrição: </label>
+                        <textarea name="descricao" id="descricao" readonly>Um texto qualquer...</textarea>
+
+                        <div>
+                            <button>Excluir</button>
+                            <button>Atualizar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <div class="orcamento">
+                        <p>1</p>
+                        <p>Fulano da Silva</p>
+                        <p>31/03/2025</p>
+                        <p>Em andamento</p>
+                        <p>R$ 5000,00</p>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="orcamento table-gray">
+                        <p>1</p>
+                        <p>Fulano da Silva</p>
+                        <p>31/03/2025</p>
+                        <p>Em andamento</p>
+                        <p>R$ 5000,00</p>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="orcamento">
+                        <p>1</p>
+                        <p>Fulano da Silva</p>
+                        <p>31/03/2025</p>
+                        <p>Finalizado</p>
+                        <p>R$ 5000,00</p>
+                        <p>14/03/2025</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="orcamento table-gray">
+                        <p>1</p>
+                        <p>Fulano da Silva</p>
+                        <p>31/03/2025</p>
+                        <p>Finalizado</p>
+                        <p>R$ 5000,00</p>
+                        <p>14/03/2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-pages"></div>
     </main>
+
+    <script type="module" src="~/js/Api/ApiGet/ShowOrcamento.js"></script>
 </body>
 </html>

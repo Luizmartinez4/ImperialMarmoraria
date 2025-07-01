@@ -1,6 +1,7 @@
 using ImperialMarmoraria.Api.Filters;
 using ImperialMarmoraria.Application;
 using ImperialMarmoraria.Infrastructure;
+using ImperialMarmoraria.Infrastructure.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,4 +44,14 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+await MigrateDataBase();
+
+
 app.Run();
+
+async Task MigrateDataBase()
+{
+    await using var scope = app.Services.CreateAsyncScope();
+
+    await DataBaseMigration.MigrationDataBase(scope.ServiceProvider);
+}
