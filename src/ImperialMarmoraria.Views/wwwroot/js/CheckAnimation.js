@@ -34,7 +34,7 @@ export function draw() {
 
         // Mensagem abaixo do círculo
         mensagem.style.display = 'block';
-        mensagem.style.color = 'rgba(0, 255, 0, 0.6)';
+        mensagem.style.color = 'rgba(28, 236, 28, 0.6)';
         mensagem.style.paddingTop = '10px';
         mensagem.style.fontSize = '32px'
         mensagem.style.fontWeight = '700'

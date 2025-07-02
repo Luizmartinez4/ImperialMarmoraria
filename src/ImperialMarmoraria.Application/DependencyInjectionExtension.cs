@@ -1,5 +1,6 @@
 ﻿using ImperialMarmoraria.Application.AutoMapper;
 using ImperialMarmoraria.Application.UseCases.Email;
+using ImperialMarmoraria.Application.UseCases.Orcamento.GetAll;
 using ImperialMarmoraria.Application.UseCases.Orcamento.Registra;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,6 +21,7 @@ public static class DependencyInjectionExtension
     private static void AddUseCases(IServiceCollection services)
     {
         services.AddScoped<IRegistraOrcamento, RegistraOrcamento>();
+        services.AddScoped<IGetAllOrcamentos, GetAllOrcamentos>();
         services.AddTransient<IEmailUseCase, EmailUseCase>();
     }
 }

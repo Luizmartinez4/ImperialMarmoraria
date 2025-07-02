@@ -46,7 +46,6 @@ app.MapControllers();
 
 await MigrateDataBase();
 
-
 app.Run();
 
 async Task MigrateDataBase()

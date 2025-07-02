@@ -16,7 +16,8 @@ public static class DependencyInjectionExtension
 
     private static void AddRepositories(IServiceCollection services)
     {
-        services.AddScoped<IOrcamentosRepository, OrcamentosRepository>();
+        services.AddScoped<IOrcamentosWriteOnlyRepository, OrcamentosRepository>();
+        services.AddScoped<IOrcamentosReadOnlyRepository, OrcamentosRepository>();
         services.AddScoped<IUnityOfWork, UnityOfWork>();
     }
 

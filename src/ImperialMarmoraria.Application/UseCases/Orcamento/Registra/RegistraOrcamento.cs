@@ -11,12 +11,12 @@ namespace ImperialMarmoraria.Application.UseCases.Orcamento.Registra;
 public class RegistraOrcamento : IRegistraOrcamento
 {
     private readonly IUnityOfWork _unityOfWork;
-    private readonly IOrcamentosRepository _repository;
+    private readonly IOrcamentosWriteOnlyRepository _repository;
     private readonly IMapper _mapper;
 
     public RegistraOrcamento(
         IUnityOfWork unityOfWork,
-        IOrcamentosRepository orcamentosRepository,
+        IOrcamentosWriteOnlyRepository orcamentosRepository,
         IMapper mapper)
     {
         _unityOfWork = unityOfWork;

@@ -1,7 +1,7 @@
 ﻿using ImperialMarmoraria.Domain.Entities;
 
 namespace ImperialMarmoraria.Domain.Repositories.Orcamentos;
-public interface IOrcamentosRepository
+public interface IOrcamentosReadOnlyRepository
 {
-    Task Add(Orcamento orcamento);
+    Task<List<Orcamento>> GetAll();
 }

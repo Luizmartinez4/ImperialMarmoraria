@@ -1,4 +1,5 @@
-﻿using ImperialMarmoraria.Application.UseCases.Orcamento.Registra;
+﻿using ImperialMarmoraria.Application.UseCases.Orcamento.GetAll;
+using ImperialMarmoraria.Application.UseCases.Orcamento.Registra;
 using ImperialMarmoraria.Communication.Requests.Orcamento;
 using ImperialMarmoraria.Communication.Responses.Orcamento;
 using Microsoft.AspNetCore.Mvc;
@@ -19,4 +20,21 @@ public class OrcamentoController : ControllerBase
 
          return Created(string.Empty, response);
     }
+
+    [HttpGet]
+    [ProducesResponseType(typeof(ResponseOrcamentosJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public async Task<IActionResult> Register(
+        [FromServices] IGetAllOrcamentos useCase)
+    {
+        var response = await useCase.Execute();
+
+        if(response.Orcamentos.Count  != 0)
+        {
+            return Ok(response);
+        }
+
+        return NoContent();
+    }
+
 }

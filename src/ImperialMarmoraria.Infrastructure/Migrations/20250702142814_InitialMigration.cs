@@ -30,8 +30,10 @@ namespace ImperialMarmoraria.Infrastructure.Migrations
                     Descricao = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Status = table.Column<int>(type: "int", nullable: false),
+                    Valor = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     DataInicio = table.Column<DateOnly>(type: "date", nullable: false),
-                    DataFim = table.Column<DateOnly>(type: "date", nullable: false)
+                    DataFim = table.Column<DateOnly>(type: "date", nullable: true)
                 },
                 constraints: table =>
                 {

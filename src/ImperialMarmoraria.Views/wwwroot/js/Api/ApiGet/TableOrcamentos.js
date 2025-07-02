@@ -1,14 +1,14 @@
-﻿import { Valores } from "./Teste.js"
+﻿import { GetAllOrcamentos } from "./ApiGetAllOrcamentos.js"
 
-export function ShowOrcamentosOnScreen() {
+export async function ShowOrcamentosOnScreen() {
     const table = document.getElementsByClassName("table-hover")[0]
     table.innerHTML = ""
 
     const paginaActive = document.querySelector(".table-pages > .active")
     const value = (Number(paginaActive.textContent) - 1) * 10
-    const quantidade = Math.min(value + 10, Valores.length);
+    const { orcamentos } = await GetAllOrcamentos()
+    const quantidade = Math.min(value + 10, orcamentos.length);
 
-    const orcamentos = Valores
     for (let i = value; i < quantidade; i++) {
         let tableItens = document.createElement("div")
 
@@ -22,27 +22,47 @@ export function ShowOrcamentosOnScreen() {
         let id = document.createElement("p")
         id.textContent = i + 1
 
-        let nome = document.createElement("p")
-        nome.textContent = orcamentos[i].Nome
+        let Nome = document.createElement("p")
+        Nome.textContent = orcamentos[i].nome
 
-        let data = document.createElement("p")
-        data.textContent = orcamentos[i].Data
+        let dataInicioFormatada = formataData(orcamentos[i].dataInicio)
 
-        let status = document.createElement("p")
-        status.textContent = orcamentos[i].Status
+        let Data = document.createElement("p")
+        Data.textContent = dataInicioFormatada
+
+        // formata os resultados do status
+        let status;
+        if (orcamentos[i].status == 0) {
+            status = "Novo"
+        } else if (orcamentos[i].status == 1) {
+            status = "Em andamento"
+        } else {
+            status = "Finalizado"
+        }
+
+        let Status = document.createElement("p")
+        Status.textContent = status
 
         let orcamento = document.createElement("p")
-        orcamento.textContent = orcamentos[i].Orcamento
+        orcamento.textContent = orcamentos[i].valor
 
-        let dataFim = document.createElement("p")
-        dataFim.textContent = orcamentos[i].DataFim
+        // Formata a data
+        let dataFimFormatada
+        if (orcamentos[i].dataFim == null) {
+            dataFimFormatada = ""
+        } else {
+            dataFimFormatada = formataData(orcamentos[i].dataFim)
+        }
+
+        let DataFim = document.createElement("p")
+        DataFim.textContent = dataFimFormatada
 
         div.appendChild(id)
-        div.appendChild(nome)
-        div.appendChild(data)
-        div.appendChild(status)
+        div.appendChild(Nome)
+        div.appendChild(Data)
+        div.appendChild(Status)
         div.appendChild(orcamento)
-        div.appendChild(dataFim)
+        div.appendChild(DataFim)
 
         // Adicionando formulário
         let form = document.createElement("form")
@@ -59,7 +79,7 @@ export function ShowOrcamentosOnScreen() {
 
         let inputNome = document.createElement("input")
         inputNome.setAttribute("type", "text")
-        inputNome.setAttribute("value", orcamentos[i].Nome)
+        inputNome.setAttribute("value", orcamentos[i].nome)
         inputNome.setAttribute("readonly", true)
 
         divNome.appendChild(labelNome)
@@ -74,7 +94,7 @@ export function ShowOrcamentosOnScreen() {
 
         let inputEmail = document.createElement("input")
         inputEmail.setAttribute("type", "text")
-        inputEmail.setAttribute("value", "fulanodasilva@gmail.com")
+        inputEmail.setAttribute("value", orcamentos[i].email)
         inputEmail.setAttribute("readonly", true)
 
         divEmail.appendChild(labelEmail)
@@ -89,7 +109,7 @@ export function ShowOrcamentosOnScreen() {
 
         let inputTelefone = document.createElement("input")
         inputTelefone.setAttribute("type", "text")
-        inputTelefone.setAttribute("value", "(99) 99999-9999")
+        inputTelefone.setAttribute("value", orcamentos[i].celular)
         inputTelefone.setAttribute("readonly", true)
 
         divTelefone.appendChild(labelTelefone)
@@ -110,7 +130,7 @@ export function ShowOrcamentosOnScreen() {
 
         let inputOrcamento = document.createElement("input")
         inputOrcamento.setAttribute("type", "text")
-        inputOrcamento.setAttribute("value", orcamentos[i].Orcamento)
+        inputOrcamento.setAttribute("value", orcamentos[i].valor)
         inputOrcamento.setAttribute("readonly", true)
 
         divOrcamento.appendChild(labelOrcamento)
@@ -125,7 +145,7 @@ export function ShowOrcamentosOnScreen() {
 
         let inputStatus = document.createElement("input")
         inputStatus.setAttribute("type", "text")
-        inputStatus.setAttribute("value", orcamentos[i].Status)
+        inputStatus.setAttribute("value", status)
         inputStatus.setAttribute("readonly", true)
 
         divStatus.appendChild(labelStatus)
@@ -140,7 +160,7 @@ export function ShowOrcamentosOnScreen() {
 
         let inputDataEntrada = document.createElement("input")
         inputDataEntrada.setAttribute("type", "text")
-        inputDataEntrada.setAttribute("value", orcamentos[i].Data)
+        inputDataEntrada.setAttribute("value", dataInicioFormatada)
         inputDataEntrada.setAttribute("readonly", true)
 
         divDataEntrada.appendChild(labelDataEntrada)
@@ -155,7 +175,7 @@ export function ShowOrcamentosOnScreen() {
 
         let inputDataFim = document.createElement("input")
         inputDataFim.setAttribute("type", "text")
-        inputDataFim.setAttribute("value", orcamentos[i].DataFim)
+        inputDataFim.setAttribute("value", dataFimFormatada)
         inputDataFim.setAttribute("readonly", true)
 
         divDataFim.appendChild(labelDataFim)
@@ -175,7 +195,7 @@ export function ShowOrcamentosOnScreen() {
         textarea.setAttribute("name", "descricao")
         textarea.setAttribute("id", "descricao")
         textarea.setAttribute("readonly", true)
-        textarea.textContent = "Um texto qualquer..."
+        textarea.textContent = orcamentos[i].descricao
 
         let div3 = document.createElement("div")
 
@@ -199,4 +219,10 @@ export function ShowOrcamentosOnScreen() {
 
         table.appendChild(tableItens)
     }
+}
+
+function formataData(data) {
+    let [year, month, day] = data.split("-")
+
+    return `${day}/${month}/${year}`
 }

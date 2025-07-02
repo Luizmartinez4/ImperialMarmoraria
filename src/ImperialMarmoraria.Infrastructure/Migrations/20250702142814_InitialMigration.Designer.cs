@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ImperialMarmoraria.Infrastructure.Migrations
 {
     [DbContext(typeof(ImperialMarmorariaDbContext))]
-    [Migration("20250701150315_InitialMigration")]
+    [Migration("20250702142814_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -37,7 +37,7 @@ namespace ImperialMarmoraria.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateOnly>("DataFim")
+                    b.Property<DateOnly?>("DataFim")
                         .HasColumnType("date");
 
                     b.Property<DateOnly>("DataInicio")
@@ -57,6 +57,10 @@ namespace ImperialMarmoraria.Infrastructure.Migrations
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
+
+                    b.Property<string>("Valor")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 

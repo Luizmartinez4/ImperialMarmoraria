@@ -1,10 +1,12 @@
-﻿import { Valores } from "./Teste.js"
+﻿import { GetAllOrcamentos } from "./ApiGetAllOrcamentos.js"
 
-export function divPages(activePage = 0) {
+export async function divPages(activePage = 0) {
     const divPages = document.querySelector(".table-pages")
     divPages.innerHTML = ""
 
-    const totalPages = Math.ceil(Valores.length / 10)
+    const { orcamentos } = await GetAllOrcamentos()
+
+    const totalPages = Math.ceil(orcamentos.length / 10)
     const pages = []
 
     pages.push(1)

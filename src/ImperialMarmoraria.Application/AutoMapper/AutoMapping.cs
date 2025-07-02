@@ -20,5 +20,6 @@ public class AutoMapping : Profile
     private void EntityToResponse()
     {
         CreateMap<Orcamento, ReponseRegistraOrcamentoJson>();
+        CreateMap<Orcamento, ResponseGetOrcamentoJson>();
     }
 }

@@ -3,12 +3,13 @@ import { divPages } from "./ChangePages.js"
 
 const table = document.getElementsByClassName("table-hover")[0]
 
-window.addEventListener("DOMContentLoaded", () => {
-    divPages();
+window.addEventListener("DOMContentLoaded", async () => {
+    await divPages();
+
+    await ShowOrcamentosOnScreen();
 
     reactiveEvents()
 
-    ShowOrcamentosOnScreen();
 })
 
 function reactiveEvents() {
