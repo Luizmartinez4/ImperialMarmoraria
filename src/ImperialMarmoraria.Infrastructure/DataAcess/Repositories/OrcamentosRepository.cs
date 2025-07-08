@@ -3,7 +3,7 @@ using ImperialMarmoraria.Domain.Repositories.Orcamentos;
 using Microsoft.EntityFrameworkCore;
 
 namespace ImperialMarmoraria.Infrastructure.DataAcess.Repositories;
-internal class OrcamentosRepository : IOrcamentosWriteOnlyRepository, IOrcamentosReadOnlyRepository
+internal class OrcamentosRepository : IOrcamentosWriteOnlyRepository, IOrcamentosReadOnlyRepository, IOrcamentosUpdateOnlyRepository
 {
     private readonly ImperialMarmorariaDbContext _context;
 
@@ -20,5 +20,15 @@ internal class OrcamentosRepository : IOrcamentosWriteOnlyRepository, IOrcamento
     public async Task<List<Orcamento>> GetAll()
     {
         return await _context.Orcamentos.AsNoTracking().OrderBy(orcamento => orcamento.Status).ThenByDescending(orcamento => orcamento.Id).ToListAsync();
+    }
+
+    public async Task<Orcamento?> GetById(long id)
+    {
+        return await _context.Orcamentos.AsNoTracking().FirstOrDefaultAsync(o => o.Id == id);
+    }
+
+    public void Update(Orcamento orcamento)
+    {
+        _context.Orcamentos.Update(orcamento);
     }
 }

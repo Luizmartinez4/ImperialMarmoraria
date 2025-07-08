@@ -1,5 +1,6 @@
 ﻿using ImperialMarmoraria.Application.UseCases.Orcamento.GetAll;
 using ImperialMarmoraria.Application.UseCases.Orcamento.Registra;
+using ImperialMarmoraria.Application.UseCases.Orcamento.Update;
 using ImperialMarmoraria.Communication.Requests.Orcamento;
 using ImperialMarmoraria.Communication.Responses.Orcamento;
 using Microsoft.AspNetCore.Mvc;
@@ -36,5 +37,20 @@ public class OrcamentoController : ControllerBase
 
         return NoContent();
     }
+    
 
+    [HttpPut]
+    [Route("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Update(
+        [FromServices] IUpdateOrcamentoUseCase useCase,
+        [FromRoute] long id,
+        [FromBody] RequestUpdateOrcamentoJson request)
+    {
+        await useCase.Execute(id, request);
+
+        return NoContent();
+    }
 }

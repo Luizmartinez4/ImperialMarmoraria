@@ -15,6 +15,7 @@ public class AutoMapping : Profile
     private void RequestToEntity()
     {
         CreateMap<RequestRegistraOrcamentoJson, Orcamento>();
+        CreateMap<RequestUpdateOrcamentoJson, Orcamento>();
     }
 
     private void EntityToResponse()

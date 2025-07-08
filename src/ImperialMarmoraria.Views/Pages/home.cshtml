@@ -35,6 +35,56 @@
         <div class="table-pages"></div>
     </main>
 
+    <div class="overlay hidden">
+        <div class="cancelarUpdate">
+            <h3>Deseja cancelar a atualização?</h3>
+            <hr>
+            <p>Ao clicar em "Sim", todas as alterações realizadas serão descartadas!</p>
+            <div>
+                <button id="cancelarNao">Não</button>
+                <button id="cancelarSim">Sim</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay hidden">
+        <div class="confirmarUpdate">
+            <h3>Deseja confirmar a atualização?</h3>
+            <hr>
+            <p>Ao clicar em "Sim", todas as alterações serão salvas!</p>
+            <div>
+                <button id="confirmarNao">Não</button>
+                <button id="confirmarSim" type="button">Sim</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay hidden">
+        <div class="confirmacaoNecessaria">
+            <p>Você precisa cancelar ou atualizar o orçamento atual!</p>
+            <button>Ok</button>
+        </div>
+    </div>
+
+    <div class="overlay hidden">
+        <div class="carregamento-container">
+            <div class="carregamento" id="carregamento">
+                <div class="carregamento_dot"></div>
+                <div class="carregamento_dot"></div>
+                <div class="carregamento_dot"></div>
+                <div class="carregamento_dot"></div>
+                <div class="carregamento_dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay hidden">
+        <div class="atualizado">
+            <p>Orçamento atualizado com sucesso!</p>
+            <button>Ok</button>
+        </div>
+    </div>
+
     <script type="module" src="~/js/Api/ApiGet/ShowOrcamento.js"></script>
 </body>
 </html>

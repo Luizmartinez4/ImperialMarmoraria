@@ -1,4 +1,7 @@
 ﻿import { GetAllOrcamentos } from "./ApiGetAllOrcamentos.js"
+import { Update } from "../ApiUpdate/UpdateOrcamento.js"
+import { setPodeTrocar } from "./ShowOrcamento.js"
+import { FormataCelular } from "../../FormataCelularClass.js"
 
 export async function ShowOrcamentosOnScreen() {
     const table = document.getElementsByClassName("table-hover")[0]
@@ -20,7 +23,7 @@ export async function ShowOrcamentosOnScreen() {
 
         // Adicionando dados da tabela
         let id = document.createElement("p")
-        id.textContent = i + 1
+        id.textContent = orcamentos[i].id
 
         let Nome = document.createElement("p")
         Nome.textContent = orcamentos[i].nome
@@ -82,8 +85,17 @@ export async function ShowOrcamentosOnScreen() {
         inputNome.setAttribute("value", orcamentos[i].nome)
         inputNome.setAttribute("readonly", true)
 
-        divNome.appendChild(labelNome)
-        divNome.appendChild(inputNome)
+        let divFormNome = document.createElement("div")
+
+        let divErroNome = document.createElement("div")
+        divErroNome.classList.add("error_message")
+        divErroNome.setAttribute("id", "error_nome")
+
+        divFormNome.appendChild(labelNome)
+        divFormNome.appendChild(inputNome)
+
+        divNome.appendChild(divFormNome)
+        divNome.appendChild(divErroNome)
 
         // Adicionando email
         let divEmail = document.createElement("div")
@@ -97,8 +109,17 @@ export async function ShowOrcamentosOnScreen() {
         inputEmail.setAttribute("value", orcamentos[i].email)
         inputEmail.setAttribute("readonly", true)
 
-        divEmail.appendChild(labelEmail)
-        divEmail.appendChild(inputEmail)
+        let divFormEmail = document.createElement("div")
+
+        let divErroEmail = document.createElement("div")
+        divErroEmail.classList.add("error_message")
+        divErroEmail.setAttribute("id", "error_email")
+
+        divFormEmail.appendChild(labelEmail)
+        divFormEmail.appendChild(inputEmail)
+
+        divEmail.appendChild(divFormEmail)
+        divEmail.appendChild(divErroEmail)
 
         // Adicionando Telefone
         let divTelefone = document.createElement("div")
@@ -112,8 +133,20 @@ export async function ShowOrcamentosOnScreen() {
         inputTelefone.setAttribute("value", orcamentos[i].celular)
         inputTelefone.setAttribute("readonly", true)
 
-        divTelefone.appendChild(labelTelefone)
-        divTelefone.appendChild(inputTelefone)
+        FormataCelular(inputTelefone)
+
+        let divFormTelefone = document.createElement("div")
+
+        let divErroTelefone = document.createElement("div")
+        divErroTelefone.classList.add("error_message")
+        divErroTelefone.setAttribute("id", "error_celular")
+
+        divFormTelefone.appendChild(labelTelefone)
+        divFormTelefone.appendChild(inputTelefone)
+
+        divTelefone.appendChild(divFormTelefone)
+        divTelefone.appendChild(divErroTelefone)
+
 
         div1.appendChild(divNome)
         div1.appendChild(divEmail)
@@ -132,6 +165,8 @@ export async function ShowOrcamentosOnScreen() {
         inputOrcamento.setAttribute("type", "text")
         inputOrcamento.setAttribute("value", orcamentos[i].valor)
         inputOrcamento.setAttribute("readonly", true)
+
+        formataValor(inputOrcamento)
 
         divOrcamento.appendChild(labelOrcamento)
         divOrcamento.appendChild(inputOrcamento)
@@ -191,11 +226,21 @@ export async function ShowOrcamentosOnScreen() {
         labelDescricao.setAttribute("for", "Descricao")
         labelDescricao.textContent = "Descricao:"
 
+        let divDescricao = document.createElement("div")
+        divDescricao.classList.add("descricao_orcamento")
+
         let textarea = document.createElement("textarea")
         textarea.setAttribute("name", "descricao")
         textarea.setAttribute("id", "descricao")
         textarea.setAttribute("readonly", true)
         textarea.textContent = orcamentos[i].descricao
+
+        let divErroDescicao = document.createElement("div")
+        divErroDescicao.classList.add("error_message")
+        divErroDescicao.setAttribute("id", "error_descricao")
+
+        divDescricao.appendChild(textarea)
+        divDescricao.appendChild(divErroDescicao)
 
         let div3 = document.createElement("div")
 
@@ -204,6 +249,10 @@ export async function ShowOrcamentosOnScreen() {
 
         let buttonUpdate = document.createElement("button")
         buttonUpdate.textContent = "Atualizar"
+        buttonUpdate.onclick = function (e) {
+            Update(e, orcamentos[i].id, orcamentos[i].status)
+            setPodeTrocar(false)
+        }
 
         div3.appendChild(buttonDelete)
         div3.appendChild(buttonUpdate)
@@ -211,7 +260,7 @@ export async function ShowOrcamentosOnScreen() {
         form.appendChild(div1)
         form.appendChild(div2)
         form.appendChild(labelDescricao)
-        form.appendChild(textarea)
+        form.appendChild(divDescricao)
         form.appendChild(div3)
 
         tableItens.appendChild(div)
@@ -225,4 +274,30 @@ function formataData(data) {
     let [year, month, day] = data.split("-")
 
     return `${day}/${month}/${year}`
+}
+
+function formataValor(inputValor) {
+    let digits = '';
+
+    inputValor.addEventListener('keydown', (e) => {
+        if (!e.key.match(/^\d$/) && e.key !== 'Backspace') return;
+
+        e.preventDefault();
+
+        if (e.key === 'Backspace') {
+            digits = digits.slice(0, -1);
+        } else {
+            digits += e.key;
+        }
+
+        const number = parseInt(digits || '0');
+        inputValor.value = formatCurrency(number);
+    });
+
+    function formatCurrency(num) {
+        return (num / 100).toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        });
+    }
 }

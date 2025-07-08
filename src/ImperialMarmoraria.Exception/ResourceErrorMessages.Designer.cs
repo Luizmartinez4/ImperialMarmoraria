@@ -115,6 +115,15 @@ namespace ImperialMarmoraria.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Orçamento não encontrado!.
+        /// </summary>
+        public static string NOT_FOUND_EXCEPTION {
+            get {
+                return ResourceManager.GetString("NOT_FOUND_EXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Erro desconhecido!.
         /// </summary>
         public static string UNKNOWN_ERROR {

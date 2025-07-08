@@ -2,6 +2,7 @@
 using ImperialMarmoraria.Application.UseCases.Email;
 using ImperialMarmoraria.Application.UseCases.Orcamento.GetAll;
 using ImperialMarmoraria.Application.UseCases.Orcamento.Registra;
+using ImperialMarmoraria.Application.UseCases.Orcamento.Update;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ImperialMarmoraria.Application;
@@ -22,6 +23,7 @@ public static class DependencyInjectionExtension
     {
         services.AddScoped<IRegistraOrcamento, RegistraOrcamento>();
         services.AddScoped<IGetAllOrcamentos, GetAllOrcamentos>();
+        services.AddScoped<IUpdateOrcamentoUseCase, UpdateOrcamentoUseCase>();
         services.AddTransient<IEmailUseCase, EmailUseCase>();
     }
 }
