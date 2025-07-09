@@ -14,12 +14,27 @@
 </head>
 <body>
     <section>
-        <a href="#">Lista Orçamentos</a>
+        <a href="/home" id="paginaAtual">Lista Orçamentos</a>
         <a href="#">Contatos</a>
         <a href="#">Relatórios</a>
         <a href="#">Sair</a>
     </section>
     <main>
+        <div>
+            <div>
+                <label for="progresso">Status:</label>
+                <select name="progresso" id="progresso">
+                    <option value="all">Todos</option>
+                    <option value="0">Novo</option>
+                    <option value="1">Em andamento</option>
+                    <option value="2">Finalizado</option>
+                </select>
+            </div>
+            <div>
+                <label for="pesquisa">Pesquisa:</label>
+                <input type="text" placeholder="Digite o nome do cliente para exibir o orcamento correspondente" id="pesquisa">
+            </div>
+        </div>
         <div class="table-fill">
             <div>
                 <p></p>
@@ -81,6 +96,25 @@
     <div class="overlay hidden">
         <div class="atualizado">
             <p>Orçamento atualizado com sucesso!</p>
+            <button>Ok</button>
+        </div>
+    </div>
+
+    <div class="overlay hidden">
+        <div class="confirmarDelete">
+            <h3>Deseja confirmar a exclusão?</h3>
+            <hr>
+            <p>Ao clicar em "Sim" o orçamento será excluído permanentemente!</p>
+            <div>
+                <button id="confirmarExclusaoNao">Não</button>
+                <button id="confirmarExclusaoSim" type="button">Sim</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay hidden">
+        <div class="excluido">
+            <p>Orçamento excluido com sucesso!</p>
             <button>Ok</button>
         </div>
     </div>

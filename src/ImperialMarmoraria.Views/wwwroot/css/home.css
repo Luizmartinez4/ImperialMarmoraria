@@ -1,4 +1,8 @@
-﻿body {
+﻿#paginaAtual {
+    text-decoration: underline 2px;
+}
+
+body {
     display: flex;
     position: relative;
     gap: 20px;
@@ -18,6 +22,42 @@ main {
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+main > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1500px;
+    width: 100%;
+}
+
+main > div:first-child > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+main > div:first-child > div label {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+}
+
+main > div:first-child > div select {
+    width: 150px;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+main > div:first-child > div input {
+     width: 400px;
+     height: 40px;
+     padding-left: 10px;
+     border: 1px solid rgb(202, 202, 202);
+     border-radius: 8px;
 }
 
 section {
@@ -237,14 +277,14 @@ div.table-title {
     width: 120px;
 }
 
-    .table-hover > div > form input,
-    .table-hover > div > form select {
-        width: 100%;
-        height: 30px;
-        border: 1px solid gray;
-        border-radius: 8px;
-        padding: 0 10px;
-    }
+.table-hover > div > form input,
+.table-hover > div > form select {
+    width: 100%;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 0 10px;
+}
 
 .table-hover > div > form select {
     cursor: pointer;
@@ -290,13 +330,16 @@ div.table-title {
         .cancelarUpdate button:last-child,
         .confirmacaoNecessaria button,
         .confirmarUpdate button:last-child,
-        .atualizado button{
+        .atualizado button,
+        .confirmarDelete button:last-child,
+        .excluido button:last-child{
             background-color: rgb(25, 25, 179);
         }
 
         .table-hover > div > form > div:last-of-type > button:first-child,
         .cancelarUpdate button:first-child,
-        .confirmarUpdate button:first-child {
+        .confirmarUpdate button:first-child,
+        .confirmarDelete button:first-child {
             background-color: rgb(207, 15, 15);
         }
 
@@ -304,13 +347,16 @@ div.table-title {
         .cancelarUpdate button:last-child:hover,
         .confirmacaoNecessaria button:hover,
         .confirmarUpdate button:last-child:hover,
-        .atualizado button{
+        .atualizado button,
+        .confirmarDelete button:last-child,
+        .excluido button:last-child:hover{
             background-color: rgb(19, 19, 146);
         }
 
         .table-hover > div > form > div:last-of-type > button:first-child:hover,
         .cancelarUpdate button:first-child:hover,
-        .confirmarUpdate button:first-child:hover {
+        .confirmarUpdate button:first-child:hover,
+        .confirmarDelete button:first-child:hover{
             background-color: rgb(180, 21, 21);
         }
 
@@ -362,7 +408,8 @@ div.table-title {
 
 .cancelarUpdate,
 .confirmarUpdate,
-.carregamento-container {
+.carregamento-container,
+.confirmarDelete {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -383,31 +430,37 @@ div.table-title {
     align-items: center !important;
 }
 
-    .cancelarUpdate h3,
-    .confirmarUpdate h3 {
-        font-size: 30px;
-        text-align: center;
-    }
+.cancelarUpdate h3,
+.confirmarUpdate h3,
+.confirmarDelete h3{
+    font-size: 30px;
+    text-align: center;
+}
 
 .cancelarUpdate p,
 .confirmacaoNecessaria p,
 .confirmarUpdate p,
-.atualizado p {
+.atualizado p,
+.confirmarDelete p,
+.excluido p{
     font-size: 24px;
     padding: 20px 0 40px;
 }
 
-    .cancelarUpdate div,
-    .confirmarUpdate div {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
+.cancelarUpdate div,
+.confirmarUpdate div,
+.confirmarDelete div{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
 .cancelarUpdate button,
 .confirmacaoNecessaria button,
 .confirmarUpdate button,
-.atualizado button {
+.atualizado button,
+.confirmarDelete button,
+.excluido button{
     height: 40px;
     width: 100px;
     border: none;
@@ -417,7 +470,8 @@ div.table-title {
 }
 
 .confirmacaoNecessaria,
-.atualizado {
+.atualizado,
+.excluido {
     display: flex;
     flex-direction: column;
     justify-content: center;

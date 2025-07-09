@@ -4,4 +4,5 @@ namespace ImperialMarmoraria.Domain.Repositories.Orcamentos;
 public interface IOrcamentosWriteOnlyRepository
 {
     Task Add(Orcamento orcamento);
+    Task<bool> Remove(long id);
 }

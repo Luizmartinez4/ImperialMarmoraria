@@ -1,10 +1,6 @@
-﻿import { GetAllOrcamentos } from "./ApiGetAllOrcamentos.js"
-
-export async function divPages(activePage = 0) {
+﻿export async function divPages(activePage = 0, orcamentos) {
     const divPages = document.querySelector(".table-pages")
     divPages.innerHTML = ""
-
-    const { orcamentos } = await GetAllOrcamentos()
 
     const totalPages = Math.ceil(orcamentos.length / 10)
     const pages = []
@@ -31,7 +27,8 @@ export async function divPages(activePage = 0) {
             }
         }
     } else {
-        for (let i = 2; i <= Math.min(17, totalPages - 4); i++) {
+        const end = Math.min(totalPages - 1, 17)
+        for (let i = 2; i <= end; i++) {
             pages.push(i)
         }
 

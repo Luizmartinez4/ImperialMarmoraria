@@ -1,7 +1,10 @@
 ﻿using ImperialMarmoraria.Application.AutoMapper;
 using ImperialMarmoraria.Application.UseCases.Email;
 using ImperialMarmoraria.Application.UseCases.Orcamento.GetAll;
+using ImperialMarmoraria.Application.UseCases.Orcamento.GetByName;
+using ImperialMarmoraria.Application.UseCases.Orcamento.GetByStatus;
 using ImperialMarmoraria.Application.UseCases.Orcamento.Registra;
+using ImperialMarmoraria.Application.UseCases.Orcamento.Remove;
 using ImperialMarmoraria.Application.UseCases.Orcamento.Update;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -24,6 +27,9 @@ public static class DependencyInjectionExtension
         services.AddScoped<IRegistraOrcamento, RegistraOrcamento>();
         services.AddScoped<IGetAllOrcamentos, GetAllOrcamentos>();
         services.AddScoped<IUpdateOrcamentoUseCase, UpdateOrcamentoUseCase>();
+        services.AddScoped<IRemoveOrcamentoUseCase, RemoveOrcamentoUseCase>();
+        services.AddScoped<IGetOrcamentoByStatusUseCase, GetOrcamentoByStatusUseCase>();
+        services.AddScoped<IGetOrcamentoByNameUseCase, GetOrcamentoByNameUseCase>();
         services.AddTransient<IEmailUseCase, EmailUseCase>();
     }
 }

@@ -24,7 +24,31 @@ internal class OrcamentosRepository : IOrcamentosWriteOnlyRepository, IOrcamento
 
     public async Task<Orcamento?> GetById(long id)
     {
-        return await _context.Orcamentos.AsNoTracking().FirstOrDefaultAsync(o => o.Id == id);
+        return await _context.Orcamentos.FirstOrDefaultAsync(o => o.Id == id);
+    }
+
+    public async Task<List<Orcamento>> GetByName(string name)
+    {
+        return await _context.Orcamentos.AsNoTracking().Where(o => o.Nome.Contains(name)).OrderBy(orcamento => orcamento.Status).ThenByDescending(orcamento => orcamento.Id).ToListAsync();
+    }
+
+    public async Task<List<Orcamento>> GetByStatus(int status)
+    {
+        return await _context.Orcamentos.AsNoTracking().Where(o => o.Status == status).OrderBy(orcamento => orcamento.Id).ToListAsync();
+    }
+
+    public async Task<bool> Remove(long id)
+    {
+        var result = await _context.Orcamentos.FirstOrDefaultAsync(o => o.Id == id);
+
+        if(result is null)
+        {
+            return false;
+        }
+
+        _context.Orcamentos.Remove(result);
+
+        return true;
     }
 
     public void Update(Orcamento orcamento)

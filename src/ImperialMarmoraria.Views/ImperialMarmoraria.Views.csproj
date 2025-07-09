@@ -7,23 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\Api\ApiGet\ApiGetOrcamentosByStatus.js" />
     <Content Remove="wwwroot\js\Api\ApiGet\ShowOrcamento.js" />
     <Content Remove="wwwroot\js\Api\ApiGet\TableOrcamentos.js" />
     <Content Remove="wwwroot\js\Api\ApiUpdate\UpdateOrcamentoApi.js" />
+    <Content Remove="wwwroot\js\Api\DeleteOrcamento.js" />
     <Content Remove="wwwroot\js\CheckAnimation.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\Api\ApiGet\ApiGetOrcamentosByStatus.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\Api\ApiGet\ShowOrcamento.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\Api\ApiGet\TableOrcamentos.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\Api\ApiUpdate\UpdateOrcamentoApi.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\Api\DeleteOrcamento.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\CheckAnimation.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\Api\ApiGet\ApiGetOrcamentosByStatus.js" />
     <None Include="wwwroot\js\Api\ApiGet\ShowOrcamento.js" />
     <None Include="wwwroot\js\Api\ApiGet\TableOrcamentos.js" />
     <None Include="wwwroot\js\Api\ApiUpdate\UpdateOrcamentoApi.js" />
+    <None Include="wwwroot\js\Api\ApiDelete\DeleteOrcamento.js" />
     <None Include="wwwroot\js\CheckAnimation.js" />
   </ItemGroup>
 

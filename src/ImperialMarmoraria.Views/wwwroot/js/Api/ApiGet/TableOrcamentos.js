@@ -1,15 +1,14 @@
-﻿import { GetAllOrcamentos } from "./ApiGetAllOrcamentos.js"
-import { Update } from "../ApiUpdate/UpdateOrcamento.js"
+﻿import { Update } from "../ApiUpdate/UpdateOrcamento.js"
 import { setPodeTrocar } from "./ShowOrcamento.js"
 import { FormataCelular } from "../../FormataCelularClass.js"
+import { Delete } from "../ApiDelete/DeleteOrcamento.js"
 
-export async function ShowOrcamentosOnScreen() {
+export async function ShowOrcamentosOnScreen(orcamentos) {
     const table = document.getElementsByClassName("table-hover")[0]
     table.innerHTML = ""
 
     const paginaActive = document.querySelector(".table-pages > .active")
     const value = (Number(paginaActive.textContent) - 1) * 10
-    const { orcamentos } = await GetAllOrcamentos()
     const quantidade = Math.min(value + 10, orcamentos.length);
 
     for (let i = value; i < quantidade; i++) {
@@ -246,6 +245,10 @@ export async function ShowOrcamentosOnScreen() {
 
         let buttonDelete = document.createElement("button")
         buttonDelete.textContent = "Excluir"
+        buttonDelete.onclick = function (e) {
+            e.preventDefault()
+            Delete(orcamentos[i].id)
+        }
 
         let buttonUpdate = document.createElement("button")
         buttonUpdate.textContent = "Atualizar"
