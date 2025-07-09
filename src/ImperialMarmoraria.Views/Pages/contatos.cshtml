@@ -1,0 +1,40 @@
+﻿@page
+@model ImperialMarmoraria.Views.Pages.contatosModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="~/css/home.css">
+    <link rel="stylesheet" href="~/css/contatos.css">
+    <link rel="stylesheet" href="~/css/styles.css">
+</head>
+<body>
+    <section>
+        <a href="/home">Lista Orçamentos</a>
+        <a href="/contatos" id="paginaAtual">Contatos</a>
+        <a href="#">Relatórios</a>
+        <a href="#">Sair</a>
+    </section>
+    <main>
+        <div class="contatos-table">
+            <div>
+                <p>Nome</p>
+                <p>Email</p>
+                <p>Telefone</p>
+            </div>
+            <div class="table-hover">
+                <div class="table-contatos"></div>
+            </div>
+        </div>
+
+        <div class="table-pages"></div>
+    </main>
+
+    <script type="module" src="~/js/Api/ApiGet/ShowContatos.js"></script>
+</body>
+</html>

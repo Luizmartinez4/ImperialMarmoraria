@@ -5,19 +5,19 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{333EF991-D700-45B5-B8AE-AF0E46C5176A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialMarmoraria.Views", "src\ImperialMarmoraria.Views\ImperialMarmoraria.Views.csproj", "{134F87DB-21CC-46D2-BDFF-ADD9C10E62CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImperialMarmoraria.Views", "src\ImperialMarmoraria.Views\ImperialMarmoraria.Views.csproj", "{134F87DB-21CC-46D2-BDFF-ADD9C10E62CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialMarmoraria.Api", "src\ImperialMarmoraria.Api\ImperialMarmoraria.Api.csproj", "{B2F15739-8F26-42B6-882D-9EC20DCFE5A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImperialMarmoraria.Api", "src\ImperialMarmoraria.Api\ImperialMarmoraria.Api.csproj", "{B2F15739-8F26-42B6-882D-9EC20DCFE5A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialMarmoraria.Application", "src\ImperialMarmoraria.Application\ImperialMarmoraria.Application.csproj", "{054B9512-39D4-4EEA-BFE6-CC567855F53A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImperialMarmoraria.Application", "src\ImperialMarmoraria.Application\ImperialMarmoraria.Application.csproj", "{054B9512-39D4-4EEA-BFE6-CC567855F53A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialMarmoraria.Communication", "src\ImperialMarmoraria.Communication\ImperialMarmoraria.Communication.csproj", "{DCF73786-0313-44C6-915E-96327756A4B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImperialMarmoraria.Communication", "src\ImperialMarmoraria.Communication\ImperialMarmoraria.Communication.csproj", "{DCF73786-0313-44C6-915E-96327756A4B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialMarmoraria.Exception", "src\ImperialMarmoraria.Exception\ImperialMarmoraria.Exception.csproj", "{5F1AA14C-AA1A-4734-850A-FB06B8D0545D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImperialMarmoraria.Exception", "src\ImperialMarmoraria.Exception\ImperialMarmoraria.Exception.csproj", "{5F1AA14C-AA1A-4734-850A-FB06B8D0545D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialMarmoraria.Domain", "src\ImperialMarmoraria.Domain\ImperialMarmoraria.Domain.csproj", "{AA08C755-F2A0-413A-B6E7-4C07F4C8DB6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImperialMarmoraria.Domain", "src\ImperialMarmoraria.Domain\ImperialMarmoraria.Domain.csproj", "{AA08C755-F2A0-413A-B6E7-4C07F4C8DB6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialMarmoraria.Infrastructure", "src\ImperialMarmoraria.Infrastructure\ImperialMarmoraria.Infrastructure.csproj", "{BBC65E55-F758-4986-98FD-32C35B315833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImperialMarmoraria.Infrastructure", "src\ImperialMarmoraria.Infrastructure\ImperialMarmoraria.Infrastructure.csproj", "{BBC65E55-F758-4986-98FD-32C35B315833}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
