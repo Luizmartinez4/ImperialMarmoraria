@@ -1,6 +1,7 @@
 ﻿import { apiConfig } from "../ApiConfig.js"
 
 const form = document.querySelector("form")
+const errorMessage = document.getElementById("errorMessage")
 
 form.onsubmit = async (e) => {
     e.preventDefault()
@@ -17,7 +18,13 @@ form.onsubmit = async (e) => {
             body: JSON.stringify({ email, password })
         })
 
-        if (response.ok) {
+        if (!response.ok) {
+            const errorData = await response.json()
+
+            errorData.errorMessages.forEach((error) => {
+                errorMessage.textContent = error
+            })
+        } else {
             const data = await response.json();
             localStorage.removeItem("token");
             localStorage.removeItem("role");
@@ -25,6 +32,7 @@ form.onsubmit = async (e) => {
             localStorage.setItem('role', data.role);
             window.location.href = "/home";
         }
+
     } catch (e) {
         console.log(e)
     }  

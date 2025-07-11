@@ -189,6 +189,12 @@ input:focus ~ .highlight {
     }
 }
 
+p {
+    color: red;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
 button {
     padding: 15px;
     width: 100px;
