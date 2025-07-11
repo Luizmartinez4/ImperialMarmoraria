@@ -4,7 +4,11 @@ import { divPages } from "./ChangePages.js"
 const table = document.querySelector(".table-contatos")
 
 window.addEventListener("DOMContentLoaded", async () => {
-    const { orcamentos } = await GetAllOrcamentos()
+    const { orcamentos } = await GetAllOrcamentos();
+
+    orcamentos.sort((a, b) => {
+        return a.nome.localeCompare(b.nome);
+    });
 
     await divPages(0, orcamentos);
 

@@ -19,7 +19,7 @@ internal class OrcamentosRepository : IOrcamentosWriteOnlyRepository, IOrcamento
 
     public async Task<List<Orcamento>> GetAll()
     {
-        return await _context.Orcamentos.AsNoTracking().OrderBy(orcamento => orcamento.Status).ThenByDescending(orcamento => orcamento.Id).ToListAsync();
+        return await _context.Orcamentos.AsNoTracking().OrderBy(orcamento => orcamento.Status).ThenByDescending(orcamento => orcamento.DataInicio).ThenByDescending(orcamento => orcamento.Id).ToListAsync();
     }
 
     public async Task<Orcamento?> GetById(long id)
@@ -29,12 +29,12 @@ internal class OrcamentosRepository : IOrcamentosWriteOnlyRepository, IOrcamento
 
     public async Task<List<Orcamento>> GetByName(string name)
     {
-        return await _context.Orcamentos.AsNoTracking().Where(o => o.Nome.Contains(name)).OrderBy(orcamento => orcamento.Status).ThenByDescending(orcamento => orcamento.Id).ToListAsync();
+        return await _context.Orcamentos.AsNoTracking().Where(o => o.Nome.Contains(name)).OrderBy(orcamento => orcamento.Status).ThenByDescending(orcamento => orcamento.DataInicio).ThenByDescending(orcamento => orcamento.Id).ToListAsync();
     }
 
     public async Task<List<Orcamento>> GetByStatus(int status)
     {
-        return await _context.Orcamentos.AsNoTracking().Where(o => o.Status == status).OrderBy(orcamento => orcamento.Id).ToListAsync();
+        return await _context.Orcamentos.AsNoTracking().Where(o => o.Status == status).OrderBy(orcamento => orcamento.DataInicio).ThenByDescending(orcamento => orcamento.Id).ToListAsync();
     }
 
     public async Task<bool> Remove(long id)

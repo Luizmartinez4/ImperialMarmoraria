@@ -16,26 +16,14 @@
 <body>
     <section>
         <a href="/home">Lista Orçamentos</a>
-        <a href="/contatos" id="paginaAtual">Contatos</a>
+        <a href="/contatos">Contatos</a>
         <a href="#">Relatórios</a>
+        <a href="/funcionarios" id="paginaAtual">Funcionarios</a>
         <a href="/index">Sair</a>
     </section>
     <main>
-        <div class="contatos-table">
-            <div>
-                <p>Nome</p>
-                <p>Email</p>
-                <p>Telefone</p>
-            </div>
-            <div class="table-hover">
-                <div class="table-contatos"></div>
-            </div>
-        </div>
-
-        <div class="table-pages"></div>
     </main>
 
-    <script type="module" src="~/js/Api/ApiGet/ShowContatos.js"></script>
-    <script type="module" src="~/js/Api/Login/ProtectHome.js"></script>
+    <script type="module" src="~/js/Api/Login/ProtectFuncionarios.js"></script>
 </body>
 </html>

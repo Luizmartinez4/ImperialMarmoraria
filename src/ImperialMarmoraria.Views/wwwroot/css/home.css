@@ -3,7 +3,7 @@
 }
 
 body {
-    display: flex;
+    display: none;
     position: relative;
     gap: 20px;
     width: 100vw;

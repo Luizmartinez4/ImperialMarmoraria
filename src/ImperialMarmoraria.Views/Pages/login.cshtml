@@ -18,40 +18,24 @@
             <div class="flex-login">
                 <!--<input type="text" placeholder="Usuário ou email">
                 <input type="password" name="" id="" placeholder="Senha">-->
-                <form action="">
+             
                     <div class="group">
-                        <input type="text" required>
+                        <input type="text" id="email" required>
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>Usuário</label>
                     </div>
                     <div class="group">
-                        <input type="password" required>
+                        <input type="password" id="password" required>
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>Senha</label>
                     </div>
-                </form>
-                <div class="user-pass-text">
-                    <div>
-                        <input type="checkbox">
-                        <p>Lembre-se de mim</p>
-                    </div>
-                    <p class="form-link"><a href="#">Esqueceu sua senha?</a></p>
-                </div>
                 <button type="submit">Login</button>
-                <div>
-                    <p>Ou faça login com:</p>
-                    <div class="icons">
-                        <a href="#"><img src="assets/icons/google.png" alt=""></a>
-                        <a href="#"><img src="assets/icons/facebook.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="bottom-login">
-                    <p>Não tem conta?<a href="#"> Registre-se agora</a></p>
-                </div>
             </div>
         </form>
     </main>
+
+    <script type="module" src="~/js/Api/Login/LoginAuthorization.js"></script>
 </body>
 </html>

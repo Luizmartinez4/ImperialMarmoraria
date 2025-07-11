@@ -129,6 +129,12 @@
   <data name="EMAIL_INVALIDO" xml:space="preserve">
     <value>Insira um email válido!</value>
   </data>
+  <data name="EMAIL_JA_EXISTE" xml:space="preserve">
+    <value>Este email já existe!</value>
+  </data>
+  <data name="EMAIL_OU_SENHA_INVALIDOS" xml:space="preserve">
+    <value>Email ou senha inválidos!</value>
+  </data>
   <data name="EMAIL_VAZIO" xml:space="preserve">
     <value>O campo email não pode estar vazio!</value>
   </data>
@@ -137,6 +143,9 @@
   </data>
   <data name="NOT_FOUND_EXCEPTION" xml:space="preserve">
     <value>Orçamento não encontrado!</value>
+  </data>
+  <data name="SENHA_INVALIDA" xml:space="preserve">
+    <value>Sua senha deve ter pelo menos 8 caracteres e incluir pelo menos um número, uma letra maiúscula, uma letra minúscula e um caractere especial.</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
     <value>Erro desconhecido!</value>

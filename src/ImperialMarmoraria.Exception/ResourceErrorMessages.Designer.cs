@@ -97,6 +97,24 @@ namespace ImperialMarmoraria.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Este email já existe!.
+        /// </summary>
+        public static string EMAIL_JA_EXISTE {
+            get {
+                return ResourceManager.GetString("EMAIL_JA_EXISTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Email ou senha inválidos!.
+        /// </summary>
+        public static string EMAIL_OU_SENHA_INVALIDOS {
+            get {
+                return ResourceManager.GetString("EMAIL_OU_SENHA_INVALIDOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O campo email não pode estar vazio!.
         /// </summary>
         public static string EMAIL_VAZIO {
@@ -120,6 +138,15 @@ namespace ImperialMarmoraria.Exception {
         public static string NOT_FOUND_EXCEPTION {
             get {
                 return ResourceManager.GetString("NOT_FOUND_EXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sua senha deve ter pelo menos 8 caracteres e incluir pelo menos um número, uma letra maiúscula, uma letra minúscula e um caractere especial..
+        /// </summary>
+        public static string SENHA_INVALIDA {
+            get {
+                return ResourceManager.GetString("SENHA_INVALIDA", resourceCulture);
             }
         }
         
