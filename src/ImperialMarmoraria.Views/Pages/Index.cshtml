@@ -13,15 +13,15 @@
     <title>Página Inicial</title>
     <link rel="stylesheet" href="~/css/styles.css">
     <script src="~/js/menu.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
+    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=35991893669&text=Oi!%20Quero%20fazer%20meu%20or%C3%A7amento">
+      <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
+    </a>
 </head>
-<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-<a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=35991893669&text=Oi!%20Quero%20fazer%20meu%20or%C3%A7amento">
-  <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
-</a>
 <body>
     <header>
         <div class="cabecalho">
-            <img src="~/assets/image 1.svg" alt="Logo da Imperial">  
+            <img src="~/assets/Logo.png" alt="Logo da Imperial">  
             <ul class="cabecalho-lista">
                 <li><a href="/Index">Inicio</a></li>
                 <li><a href="/sobre">Sobre</a></li>
@@ -45,9 +45,13 @@
     </header>
     <main>
         <section class="banner">
+            <div class="carousel">
+                <img src="~/assets/Banner rotativo 1.png" alt="Banner 1" class="active" />
+                <img src="~/assets/Banner rotativo 2.png" alt="Banner 2" />
+                <img src="~/assets/Banner rotativo 3.png" alt="Banner 3" />
+            </div>
             <div>
-                <h1>Faça sua casa <br>
-                ser única</h1>
+                <h1>Faça sua casa <br> ser única</h1>
                 <p>Nós desenvolveremos o espaço perfeito para você,<br> refletindo seu estilo único</p>
                 <a href="/form">Solicite um orçamento</a>
             </div>
@@ -55,7 +59,7 @@
 
         <section class="detalhes">
             <div class="detalhes__ipermeabilização">
-                <img src="~/assets/impermeabilizado 1.png">
+                <img src="~/assets/Impermeabilizante.png">
                 <div class="detalhes__texto">
                     <h2>Ipermeabilização</h2>
                     <p>É importante ressaltar a
@@ -69,7 +73,7 @@
                 </div>
             </div>
             <div class="detalhes__polimento">
-                <img src="~/assets/polimento 1.png">
+                <img src="~/assets/Polimento.png">
                 <div class="detalhes__texto">
                     <h2>Polimento</h2>
                     <p>O polimento realça a durabilidade das pedras naturais e sua capacidade de serem polidas para restaurar seu brilho original quando sofrem desgaste ao longo do tempo. A empresa oferece o serviço de polimento e está disponível para fornecer orçamentos mediante contato.</p>
@@ -80,7 +84,7 @@
         <hr>
 
         <section class="institucional">
-            <img class="banheiro1" src="~/assets/banheiros-16 1.png" alt="" >
+            <img class="banheiro1" src="~/assets/Institucional.png" alt="Institucional" >
         
             <div class="institucional__container">
                 <h1>Institucional</h1>
@@ -99,12 +103,12 @@
         </section>
 
         <section>
-            <img src="~/assets/imgbanheiro.png" class="image-background">
+            <img src="~/assets/imgbackground1.png" class="image-background">
         </section>
         
         <section class="materiais">
             <figure>
-                <img src="~/assets/granito.png" alt="Granito">
+                <img src="~/assets/Granito maior.png" alt="Granito">
             </figure>
             <div>
                 <div>
@@ -113,9 +117,9 @@
                 </div>
 
                 <figure>
-                    <img src="~/assets/marmore.jpg" alt="Marmore">
-                    <img src="~/assets/pdecorativa.jpg" alt="Pedra decorativa">
-                    <img src="~/assets/ardosia.jpg" alt="Ardosia">
+                    <img src="~/assets/Granito menor 1.png" alt="Marmore">
+                    <img src="~/assets/Granito menor 2.png" alt="Pedra decorativa">
+                    <img src="~/assets/Granito menor 3.png" alt="Ardosia">
                 </figure>
             </div>
         </section>
@@ -155,7 +159,7 @@
         </section>
 
         <section>
-            <img src="~/assets/69339795_978967465778434_1095677828298440704_n 1.png" class="image-background">
+            <img src="~/assets/imgbackground2.png" class="image-background">
         </section>
 
         <section class="feedback">
@@ -180,7 +184,7 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footer id="rodape">
         <div>
             <a href=""><img src="~/assets/imgttk.png" alt="Icone do Tiktok"></a>
             <a href=""><img src="~/assets/imgwpp.png" alt="Icone do Whatsapp"></a>
@@ -229,12 +233,12 @@
 
                 <li>
                     <img src="~/assets/imgseta.png">
-                    <a href="">~/Mármores</a>
+                    <a href="">Mármores</a>
                 </li>
 
                 <li>
                     <img src="~/assets/imgseta.png">
-                    <a href="">~/Ardósia</a>
+                    <a href="">Ardósia</a>
                 </li>
 
                 <li>
@@ -275,5 +279,18 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        const images = document.querySelectorAll('.carousel img');
+        let current = 0;
+
+        function showNextImage() {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }
+
+        setInterval(showNextImage, 5000);
+    </script>
 </body>
 </html>
