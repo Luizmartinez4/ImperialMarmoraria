@@ -14,7 +14,7 @@
 }
 
     .detalhes__ipermeabilização img {
-        height: 50%;
+        height: 80%;
     }
 
 .detalhes__polimento {
@@ -25,18 +25,18 @@
 }
 
     .detalhes__polimento img {
-        height: 50%;
+        height: 80%;
     }
 
 .detalhes__texto h2 {
     font-family: "Italiana", sans-serif;
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .detalhes__texto p {
     font-family: "Inter", sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 1130px) {

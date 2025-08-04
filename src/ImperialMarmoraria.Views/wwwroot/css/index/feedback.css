@@ -27,7 +27,9 @@
 
     .feedback p {
         font-family: var(--fonte-principal);
-        font-size: 24px;
+        font-size: 20px;
+        padding: 20px;
+        text-align: justify;
         color: #000000;
         padding-top: 20px;
     }

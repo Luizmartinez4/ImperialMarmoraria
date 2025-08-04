@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 130px;
+    height: 100px;
     padding: 0 100px;
     position: relative;
     background-color: #010243;
@@ -10,7 +10,6 @@
 
     .cabecalho img {
         width: 200px;
-        height: 60px;
         z-index: 5;
     }
 
@@ -25,7 +24,7 @@
 .cabecalho-lista,
 .cabecalho-lista-mobile {
     justify-content: space-between;
-    width: 50%;
+    width: 35%;
 }
 
     .cabecalho ul li a,
@@ -33,7 +32,7 @@
         color: white;
         font-family: var(--fonte-principal);
         font-weight: 400;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
 .menu {
