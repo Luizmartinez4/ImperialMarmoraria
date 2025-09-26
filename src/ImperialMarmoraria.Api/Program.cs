@@ -1,5 +1,7 @@
 using ImperialMarmoraria.Api.Filters;
+using ImperialMarmoraria.Api.Token;
 using ImperialMarmoraria.Application;
+using ImperialMarmoraria.Domain.Security.Tokens;
 using ImperialMarmoraria.Infrastructure;
 using ImperialMarmoraria.Infrastructure.Migrations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -34,6 +36,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
+
+builder.Services.AddScoped<ITokenProvider, HttpContentTokenValue>();
+
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();

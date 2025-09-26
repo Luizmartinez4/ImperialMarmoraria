@@ -3,6 +3,7 @@ using ImperialMarmoraria.Domain.Repositories.Orcamentos;
 using ImperialMarmoraria.Domain.Repositories.Users;
 using ImperialMarmoraria.Domain.Security.Cryptography;
 using ImperialMarmoraria.Domain.Security.Tokens;
+using ImperialMarmoraria.Domain.Services.LoggedUser;
 using ImperialMarmoraria.Infrastructure.DataAcess;
 using ImperialMarmoraria.Infrastructure.DataAcess.Repositories;
 using ImperialMarmoraria.Infrastructure.Security.Tokens;
@@ -14,11 +15,12 @@ namespace ImperialMarmoraria.Infrastructure;
 public static class DependencyInjectionExtension
 {   public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddScoped<IPasswordEncripter, Security.Cryptography.BCrypt>();
+        services.AddScoped<ILoggedUser, LoggedUser.LoggedUser>();
+        
         AddDbContext(services, configuration);
         AddRepositories(services);
         addToken(services, configuration);
-
-        services.AddScoped<IPasswordEncripter, Security.Cryptography.BCrypt>();
     }
 
     private static void addToken(IServiceCollection services, IConfiguration configuration)
