@@ -38,6 +38,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IOrcamentosUpdateOnlyRepository, OrcamentosRepository>();
         services.AddScoped<IUsersReadOnlyRepository, UsersRepository>();
         services.AddScoped<IUserWriteOnlyRepository, UsersRepository>();
+        services.AddScoped<IUserUpdateOnlyRepository, UsersRepository>();
         services.AddScoped<IUnityOfWork, UnityOfWork>();
     }
 

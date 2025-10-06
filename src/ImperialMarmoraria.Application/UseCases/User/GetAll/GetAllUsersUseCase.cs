@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ImperialMarmoraria.Communication.Responses.User;
+using ImperialMarmoraria.Domain.Entities;
 using ImperialMarmoraria.Domain.Repositories.Users;
 
 namespace ImperialMarmoraria.Application.UseCases.User.GetAll
@@ -16,9 +17,18 @@ namespace ImperialMarmoraria.Application.UseCases.User.GetAll
         }
 
 
-        public Task<ResponseGetUsersJson> Execute()
+        public async Task<ResponseGetUsersJson> Execute()
         {
-            return;
+            var user = await _repository.GetAllUsers();
+
+            var responseList = _mapper.Map<List<ResponseGetUserJson>>(user);
+
+            var response = new ResponseGetUsersJson
+            {
+                Users = responseList
+            };
+
+            return response;
         }
     }
 }

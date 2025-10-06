@@ -2,6 +2,7 @@
 using ImperialMarmoraria.Communication.Requests.Orcamento;
 using ImperialMarmoraria.Communication.Requests.User;
 using ImperialMarmoraria.Communication.Responses.Orcamento;
+using ImperialMarmoraria.Communication.Responses.User;
 using ImperialMarmoraria.Domain.Entities;
 
 namespace ImperialMarmoraria.Application.AutoMapper;
@@ -25,5 +26,6 @@ public class AutoMapping : Profile
     {
         CreateMap<Orcamento, ReponseRegistraOrcamentoJson>();
         CreateMap<Orcamento, ResponseGetOrcamentoJson>();
+        CreateMap<User, ResponseGetUserJson>();
     }
 }

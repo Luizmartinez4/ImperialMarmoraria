@@ -2,6 +2,6 @@
 {
     public class ResponseGetUsersJson
     {
-        List<ResponseGetUserJson> Users { get; set; } = [];
+        public List<ResponseGetUserJson> Users { get; set; } = [];
     }
 }

@@ -2,6 +2,7 @@
 using FluentValidation.Results;
 using ImperialMarmoraria.Communication.Requests.User;
 using ImperialMarmoraria.Communication.Responses.User;
+using ImperialMarmoraria.Domain.Enums;
 using ImperialMarmoraria.Domain.Repositories;
 using ImperialMarmoraria.Domain.Repositories.Users;
 using ImperialMarmoraria.Domain.Security.Cryptography;
@@ -37,7 +38,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
 
     public async Task<ResponseUserJson> Execute(RequestRegisterUserJson request)
     {
-        await Validate(request);
+        Validate(request);
 
         var user = _mapper.Map<Domain.Entities.User>(request);
 
@@ -56,18 +57,11 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         };
     }
 
-    private async Task Validate(RequestRegisterUserJson request)
+    private void Validate(RequestRegisterUserJson request)
     {
         var validator = new RegisterUserValidator();
 
         var result = validator.Validate(request);
-
-        var emailExists = await _repository.ExistActiveUserWithEmail(request.Email);
-
-        if (emailExists)
-        {
-            result.Errors.Add(new ValidationFailure(string.Empty, ResourceErrorMessages.EMAIL_JA_EXISTE));
-        }
 
         if (result.IsValid == false)
         {
