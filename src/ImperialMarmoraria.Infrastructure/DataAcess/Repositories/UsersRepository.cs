@@ -42,4 +42,18 @@ internal class UsersRepository : IUsersReadOnlyRepository, IUserWriteOnlyReposit
     {
         _context.Users.Update(user);
     }
+
+    public async Task<bool> Remove(long id)
+    {
+        var result = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+
+        if (result is null)
+        {
+            return false;
+        }
+
+        _context.Users.Remove(result);
+
+        return true;
+    }
 }

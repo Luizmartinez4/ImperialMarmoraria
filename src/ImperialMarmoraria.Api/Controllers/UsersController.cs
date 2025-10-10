@@ -1,4 +1,6 @@
-﻿using ImperialMarmoraria.Application.UseCases.User.GetAll;
+﻿using ImperialMarmoraria.Application.UseCases.Orcamento.Remove;
+using ImperialMarmoraria.Application.UseCases.User.Delete;
+using ImperialMarmoraria.Application.UseCases.User.GetAll;
 using ImperialMarmoraria.Application.UseCases.User.Register;
 using ImperialMarmoraria.Application.UseCases.User.Update;
 using ImperialMarmoraria.Communication.Requests.User;
@@ -55,5 +57,19 @@ public class UsersController : ControllerBase
         var response = await useCase.Execute(request, id);
 
         return Created(string.Empty, response);
+    }
+
+    [Authorize(Roles = Roles.ADMIN)]
+    [HttpDelete]
+    [Route("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Remove(
+        [FromServices] IRemoveUserUseCase useCase,
+        [FromRoute] long id)
+    {
+        await useCase.Execute(id);
+
+        return NoContent();
     }
 }
