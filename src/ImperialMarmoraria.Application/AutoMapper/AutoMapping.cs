@@ -20,6 +20,8 @@ public class AutoMapping : Profile
         CreateMap<RequestUpdateOrcamentoJson, Orcamento>();
         CreateMap<RequestRegisterUserJson, User>()
             .ForMember(dest => dest.Password, config => config.Ignore());
+        CreateMap<RequestUpdateUserJson, User>()
+            .ForMember(dest => dest.Password, config => config.Ignore());
     }
 
     private void EntityToResponse()

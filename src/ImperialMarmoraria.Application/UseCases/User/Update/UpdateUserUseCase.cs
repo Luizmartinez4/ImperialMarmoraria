@@ -34,21 +34,17 @@ namespace ImperialMarmoraria.Application.UseCases.User.Update
 
         public async Task<ResponseUpdatedUserJson> Execute(RequestUpdateUserJson request, long id)
         {
-            var user = _updateRepository.GetById(id);
+            var user = await _updateRepository.GetById(id);
 
             if (user == null)
             {
                 throw new NotFoundException(ResourceErrorMessages.NOT_FOUND_EXCEPTION);
             }
 
-            await Validate(request);
+            Validate(request);
 
-            var updateUser = await _mapper.Map(request, user);
-
-            _updateRepository.Update(updateUser!);
-
-            await _unityOfWork.Commit();
-
+            var updateUser = _mapper.Map(request, user);
+            
             if(request.Role == 1)
             {
                 updateUser!.Role = Roles.ADMIN;
@@ -57,6 +53,11 @@ namespace ImperialMarmoraria.Application.UseCases.User.Update
                 updateUser!.Role = Roles.TEAM_MEMBER;
             }
 
+
+            _updateRepository.Update(updateUser!);
+
+            await _unityOfWork.Commit();
+
             return new ResponseUpdatedUserJson
             {
                 Name = updateUser!.Name,
@@ -64,18 +65,11 @@ namespace ImperialMarmoraria.Application.UseCases.User.Update
             };
         }
 
-        private async Task Validate(RequestUpdateUserJson request)
+        private void Validate(RequestUpdateUserJson request)
         {
             var validator = new UpdateUserValidator();
 
             var result = validator.Validate(request);
-
-            var emailExists = await _repository.ExistActiveUserWithEmail(request.Email);
-
-            if (emailExists)
-            {
-                result.Errors.Add(new ValidationFailure(string.Empty, ResourceErrorMessages.EMAIL_JA_EXISTE));
-            }
 
             if (result.IsValid == false)
             {

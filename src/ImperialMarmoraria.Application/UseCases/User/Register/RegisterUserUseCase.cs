@@ -38,7 +38,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
 
     public async Task<ResponseUserJson> Execute(RequestRegisterUserJson request)
     {
-        Validate(request);
+        await Validate(request);
 
         var user = _mapper.Map<Domain.Entities.User>(request);
 
@@ -57,11 +57,18 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         };
     }
 
-    private void Validate(RequestRegisterUserJson request)
+    private async Task Validate(RequestRegisterUserJson request)
     {
         var validator = new RegisterUserValidator();
 
         var result = validator.Validate(request);
+
+        var emailExists = await _repository.ExistActiveUserWithEmail(request.Email);
+
+        if (emailExists)
+        {
+            result.Errors.Add(new ValidationFailure(string.Empty, ResourceErrorMessages.EMAIL_JA_EXISTE));
+        }
 
         if (result.IsValid == false)
         {
