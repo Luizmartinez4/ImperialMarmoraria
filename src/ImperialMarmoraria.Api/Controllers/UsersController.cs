@@ -1,4 +1,5 @@
 ﻿using ImperialMarmoraria.Application.UseCases.Orcamento.Remove;
+using ImperialMarmoraria.Application.UseCases.User.ChangePassword;
 using ImperialMarmoraria.Application.UseCases.User.Delete;
 using ImperialMarmoraria.Application.UseCases.User.GetAll;
 using ImperialMarmoraria.Application.UseCases.User.Register;
@@ -57,6 +58,20 @@ public class UsersController : ControllerBase
         var response = await useCase.Execute(request, id);
 
         return Created(string.Empty, response);
+    }
+
+    [Authorize]
+    [HttpPut("change-password")]
+    [Authorize]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> ChangePassword(
+        [FromServices] IChangePasswordUseCase useCase,
+        [FromBody] RequestChangePasswordJson request)
+    {
+        await useCase.Execute(request);
+
+        return NoContent();
     }
 
     [Authorize(Roles = Roles.ADMIN)]

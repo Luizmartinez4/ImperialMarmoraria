@@ -142,6 +142,24 @@ namespace ImperialMarmoraria.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A senha digitada é diferente da sua senha atual!.
+        /// </summary>
+        public static string PASSWORD_DIFERENT_CURRENT_PASSWORD {
+            get {
+                return ResourceManager.GetString("PASSWORD_DIFERENT_CURRENT_PASSWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a As senhas não coincidem!.
+        /// </summary>
+        public static string PASSWORDS_DO_NOT_MATCH {
+            get {
+                return ResourceManager.GetString("PASSWORDS_DO_NOT_MATCH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Sua senha deve ter pelo menos 8 caracteres e incluir pelo menos um número, uma letra maiúscula, uma letra minúscula e um caractere especial..
         /// </summary>
         public static string SENHA_INVALIDA {

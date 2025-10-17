@@ -144,6 +144,12 @@
   <data name="NOT_FOUND_EXCEPTION" xml:space="preserve">
     <value>Orçamento não encontrado!</value>
   </data>
+  <data name="PASSWORDS_DO_NOT_MATCH" xml:space="preserve">
+    <value>As senhas não coincidem!</value>
+  </data>
+  <data name="PASSWORD_DIFERENT_CURRENT_PASSWORD" xml:space="preserve">
+    <value>A senha digitada é diferente da sua senha atual!</value>
+  </data>
   <data name="SENHA_INVALIDA" xml:space="preserve">
     <value>Sua senha deve ter pelo menos 8 caracteres e incluir pelo menos um número, uma letra maiúscula, uma letra minúscula e um caractere especial.</value>
   </data>
