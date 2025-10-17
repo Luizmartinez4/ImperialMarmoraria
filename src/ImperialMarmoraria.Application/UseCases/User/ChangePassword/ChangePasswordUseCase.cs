@@ -53,7 +53,7 @@ namespace ImperialMarmoraria.Application.UseCases.User.ChangePassword
                 result.Errors.Add(new ValidationFailure(string.Empty, ResourceErrorMessages.PASSWORD_DIFERENT_CURRENT_PASSWORD));
             }
 
-            if (request.Password != request.ConfirmPassword)
+            if (request.NewPassword != request.ConfirmPassword)
             {
                 result.Errors.Add(new ValidationFailure(string.Empty, ResourceErrorMessages.PASSWORDS_DO_NOT_MATCH));
             }
