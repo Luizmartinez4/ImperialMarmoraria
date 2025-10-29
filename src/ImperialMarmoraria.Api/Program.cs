@@ -10,6 +10,12 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
+if (builder.Environment.IsDevelopment())
+{
+    System.Net.ServicePointManager.ServerCertificateValidationCallback +=
+        (sender, cert, chain, sslPolicyErrors) => true;
+}
+
 builder.Services.AddAuthorization();
 
 // Add services to the container.
