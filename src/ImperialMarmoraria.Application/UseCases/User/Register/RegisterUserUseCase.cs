@@ -2,6 +2,7 @@
 using FluentValidation.Results;
 using ImperialMarmoraria.Communication.Requests.User;
 using ImperialMarmoraria.Communication.Responses.User;
+using ImperialMarmoraria.Domain.Enums;
 using ImperialMarmoraria.Domain.Repositories;
 using ImperialMarmoraria.Domain.Repositories.Users;
 using ImperialMarmoraria.Domain.Security.Cryptography;

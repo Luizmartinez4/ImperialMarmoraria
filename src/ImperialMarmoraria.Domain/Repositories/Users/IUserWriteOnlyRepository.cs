@@ -4,4 +4,5 @@ namespace ImperialMarmoraria.Domain.Repositories.Users;
 public interface IUserWriteOnlyRepository
 {
     Task Add(User user);
+    Task<bool> Remove(long id);
 }

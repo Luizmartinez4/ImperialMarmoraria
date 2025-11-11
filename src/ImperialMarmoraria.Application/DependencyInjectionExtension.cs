@@ -7,7 +7,11 @@ using ImperialMarmoraria.Application.UseCases.Orcamento.GetByStatus;
 using ImperialMarmoraria.Application.UseCases.Orcamento.Registra;
 using ImperialMarmoraria.Application.UseCases.Orcamento.Remove;
 using ImperialMarmoraria.Application.UseCases.Orcamento.Update;
+using ImperialMarmoraria.Application.UseCases.User.ChangePassword;
+using ImperialMarmoraria.Application.UseCases.User.Delete;
+using ImperialMarmoraria.Application.UseCases.User.GetAll;
 using ImperialMarmoraria.Application.UseCases.User.Register;
+using ImperialMarmoraria.Application.UseCases.User.Update;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ImperialMarmoraria.Application;
@@ -33,7 +37,11 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetOrcamentoByStatusUseCase, GetOrcamentoByStatusUseCase>();
         services.AddScoped<IGetOrcamentoByNameUseCase, GetOrcamentoByNameUseCase>();
         services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
+        services.AddScoped<IGetAllUsersUseCase, GetAllUsersUseCase>();
         services.AddScoped<IDoLoginUseCase, DoLoginUseCase>();
+        services.AddScoped<IUpdateUserUseCase, UpdateUserUseCase>();
+        services.AddScoped<IChangePasswordUseCase, ChangePasswordUseCase>();
+        services.AddScoped<IRemoveUserUseCase, RemoveUserUseCase>();
         services.AddTransient<IEmailUseCase, EmailUseCase>();
     }
 }
