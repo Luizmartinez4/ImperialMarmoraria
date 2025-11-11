@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="~/css/styles.css">
     <script src="~/js/menu.js" defer></script>
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=35991893669&text=Oi!%20Quero%20fazer%20meu%20or%C3%A7amento">
+    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5519994679177&text=Oi!%20Quero%20fazer%20meu%20or%C3%A7amento">
       <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
     </a>
 </head>
@@ -126,37 +126,42 @@
 
         <section class="projetos">
             <h1>Projetos</h1>
-            <div>
-                <div>
+            <div class="cards">
+                <div class="card" data-video="~/assets/CozinhaVideo.mp4">
                     <div>
                         <img src="~/assets/play-button.svg" alt="Play">
                         <p>Assista ao vídeo</p>
                     </div>
-
                     <h2>Cozinha</h2>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
 
-                <div>
+                <div class="card" data-video="~/assets/AreaGourmetVideo.mp4">
                     <div>
                         <img src="~/assets/play-button.svg" alt="Play">
                         <p>Assista ao vídeo</p>
                     </div>
-
                     <h2>Área Gourmet</h2>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
 
-                <div>
+                <div class="card" data-video="~/assets/BanheiroVideo.mp4">
                     <div>
-                        <img src="~/assets/sign-icon.svg" class="vermais" alt="Ver mais">
-                        <h3>Clique para ver mais!</h3>
+                        <img src="~/assets/play-button.svg" alt="Play">
+                        <p>Assista ao vídeo</p>
                     </div>
+                    <h2>Banheiro</h2>
                 </div>
             </div>
         </section>
+
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <video id="videoPlayer" width="100%" height="400" controls>
+                    <source src="" type="video/mp4">
+                    Seu navegador não suporta o vídeo.
+                </video>
+            </div>
+        </div>
 
         <section>
             <img src="~/assets/imgbackground2.png" class="image-background">
@@ -167,29 +172,49 @@
 
             <div>
                 <div>
-                    <img src="~/assets/foto homem 1.png">
-                    <p> Realizei um orçamento, comprei produtos e contratei o serviço de montagem, e fiquei muito satisfeito com a qualidade e pontualidade de todo o processo. Recomendo a todos os serviços da Marmoria Imperial, pois superaram minhas expectativas em todos os aspectos!.
+                    <h3>Samiria Alves</h3>
+                    <p>São ótimos muito profissionais de uma educação sem medida mostram amor pelo que faz muito feliz por com o resultado...</p>
                 </div>
                 <div>
-                    <img src="~/assets/fot mulher 1.png">
-                    <p>Fiquei extremamente satisfeita com o atendimento da Marmória Imperial! A equipe foi muito atenciosa e me ajudou a escolher os mármores perfeitos para a minha casa. Como arquiteta, sei a importância de escolher materiais de qualidade e, com certeza, encontrei tudo o que precisava aqui. O processo foi tranquilo e o resultado final superou as minhas expectativas. Recomendo a todos que buscam excelência e atendimento impecável!.</p></p>
+                    <h3>Éllen Baldin</h3>
+                    <p>Sem palavras para a paciência, atenção e capricho, tanto no atendimento quanto na execução do projeto. Ficamos muito felizes com o resultado final e com certeza recomendaremos aos nossos amigos. Gu e Rafa, obrigada! Adoramos conhecer vocês.</p>
                 </div>
                 <div>
-                    <img src="~/assets/foto homem 2 1.png">
-                    <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Donec
-                        quis enim odio. Donec finibus gravida
-                        ante, ac varius justo gravida nec.</p>
+                    <h3>Gabriela Lukas</h3>
+                    <p>Peças de qualidade, sofisticadas, preço acessível, atendimento ótima e personalizado com idéias atuais... Eu amei, super indico</p>
+                </div>
+                <div>
+                    <h3>Marcia Valdambrini</h3>
+                    <p>Parabéns Gu e Rafa, vcs são excelentes profissionais, Deus abençoe.</p>
+                </div>
+                <div>
+                    <h3>Luci Barreiro</h3>
+                    <p>Fiz as bancadas de minha casa, ficou maravilhoso</p>
+                </div>
+                <div>
+                    <h3>Gabriel Ferreira</h3>
+                    <p>Excelente atendimento, serviço de qualidade com preços super acessíveis, melhor empresa de marmores e granitos da região</p>
+                </div>
+                <div>
+                    <h3>Elvira Valdemir</h3>
+                    <p>Eu sou super fã mesmo da Imperial Marmores e Granitos meu Deus como fico apaixonada com o trabalho de vcs e o atendimento nota mil</p>
+                </div>
+                <div>
+                    <h3>Gabriel Borato</h3>
+                    <p>Parabéns Gu e Rafa pelo excelente atendimento e qualidade no serviço prestado!</p>
+                </div>
+                <div>
+                    <h3>Sâmara Andrade</h3>
+                    <p>Não tenho nem palavras para falar do serviço, da educação, entrega rápida, orçamento facilitado e um acabamento que é puro capricho...</p>
                 </div>
             </div>
         </section>
     </main>
     <footer id="rodape">
         <div>
-            <a href=""><img src="~/assets/imgttk.png" alt="Icone do Tiktok"></a>
-            <a href=""><img src="~/assets/imgwpp.png" alt="Icone do Whatsapp"></a>
-            <a href=""><img src="~/assets/imginsta.png" alt="Icone do Instagram"></a>
-            <a href=""><img src="~/assets/imgfacebook.png" alt="Icone do Facebook"></a>
+            <a href="https://api.whatsapp.com/send?phone=5519994679177&text=Oi!%20Quero%20fazer%20meu%20or%C3%A7amento"><img src="~/assets/imgwpp.png" alt="Icone do Whatsapp"></a>
+            <a href="https://www.instagram.com/imperial_marmores_granitos?igsh=N3lldmFiNTBrcHI5"><img src="~/assets/imginsta.png" alt="Icone do Instagram"></a>
+            <a href="https://www.facebook.com/share/1JCUZBMEL2/?mibextid=wwXIfr"><img src="~/assets/imgfacebook.png" alt="Icone do Facebook"></a>
         </div>
 
         <div>
@@ -291,6 +316,42 @@
         }
 
         setInterval(showNextImage, 5000);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.card');
+            const modal = document.getElementById('videoModal');
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoSource = videoPlayer.querySelector('source');
+            const closeBtn = document.querySelector('.close');
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Corrigir caminho: trocar ~ por caminho relativo real
+                    const rawPath = card.getAttribute('data-video');
+                    const videoPath = rawPath.replace('~', ''); // exemplo: "/assets/CozinhaVideo.mp4"
+
+                    videoSource.src = videoPath;
+                    videoPlayer.load();
+                    videoPlayer.play();
+
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+                videoPlayer.pause();
+                videoPlayer.currentTime = 0;
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    videoPlayer.pause();
+                    videoPlayer.currentTime = 0;
+                }
+            });
+        });
     </script>
 </body>
 </html>

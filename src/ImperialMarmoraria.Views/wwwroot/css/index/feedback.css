@@ -15,24 +15,59 @@
     }
 
     .feedback > div {
+        overflow-x: auto;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 100px;
         width: 90%;
     }
 
         .feedback > div > div {
-            width: 400px;
+            min-width: 400px;
         }
+
+    .feedback h3 {
+        font-size: 26px;
+        font-weight: 600;
+    }
 
     .feedback p {
         font-family: var(--fonte-principal);
         font-size: 20px;
-        padding: 20px;
+        padding: 20px 0;
         text-align: justify;
         color: #000000;
         padding-top: 20px;
     }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px 20px 20px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
 
 @media(max-width: 1500px) {
     .feedback > div > div {
@@ -51,8 +86,6 @@
 
 @media(max-width: 1300px) {
     .feedback > div {
-        overflow-x: auto;
-        justify-content: flex-start;
         padding-bottom: 10px;
     }
 
