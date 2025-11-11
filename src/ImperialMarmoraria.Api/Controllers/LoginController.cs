@@ -18,6 +18,6 @@ public class LoginController : ControllerBase
     {
         var response = await useCase.Execute(request);
 
-        return Created(string.Empty, response);
+        return Redirect($"http://localhost:3000/login/callback?token={response.Token}");
     }
 }

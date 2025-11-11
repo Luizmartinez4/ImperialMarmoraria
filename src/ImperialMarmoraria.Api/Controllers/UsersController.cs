@@ -28,7 +28,6 @@ public class UsersController : ControllerBase
         return Created(string.Empty ,response);
     }
 
-    [Authorize(Roles = Roles.ADMIN)]
     [HttpGet]
     [ProducesResponseType(typeof(ResponseGetUsersJson), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
