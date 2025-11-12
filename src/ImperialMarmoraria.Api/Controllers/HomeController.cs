@@ -10,6 +10,6 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult GetPaginaHome()
     {
-        return View("~/Pages/home.cshtml");
+        return Ok(new { message = "Token válido" });
     }
 }

@@ -2,10 +2,25 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowNextJs",
+        policy =>
+        {
+            policy
+                .WithOrigins("https://localhost:3000")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
+app.UseCors("AllowNextJs");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

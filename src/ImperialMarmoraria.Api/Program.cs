@@ -10,6 +10,24 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllFrontends",
+        policy =>
+        {
+            policy
+                .WithOrigins(
+                "https://localhost:7237", 
+                "http://localhost:3000",
+                "https://localhost:3000"
+                )
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
+
+
 if (builder.Environment.IsDevelopment())
 {
     System.Net.ServicePointManager.ServerCertificateValidationCallback +=
@@ -84,18 +102,9 @@ builder.Services.AddAuthentication(config =>
     };
 });
 
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowFrontend",
-        builder => builder
-            .WithOrigins("http://localhost:3000", "https://localhost:7237")
-            .AllowAnyMethod()
-            .AllowAnyHeader()
-            .AllowCredentials());
-});
-
 var app = builder.Build();
+
+app.UseCors("AllowAllFrontends");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -105,8 +114,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseCors("AllowFrontend");
 
 app.UseAuthentication();
 app.UseAuthorization();

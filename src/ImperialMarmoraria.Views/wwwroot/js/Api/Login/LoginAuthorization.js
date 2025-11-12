@@ -30,7 +30,7 @@ form.onsubmit = async (e) => {
             localStorage.removeItem("role");
             localStorage.setItem('token', data.token);
             localStorage.setItem('role', data.role);
-            window.location.href = "/home";
+            window.location.href = `http://localhost:3000/backoffice/login/callback?token=${data.token}&role=${data.role}`;
         }
 
     } catch (e) {

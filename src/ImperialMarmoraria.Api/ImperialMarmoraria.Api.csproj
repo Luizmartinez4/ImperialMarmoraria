@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+	<SelfContained>true</SelfContained>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -20,7 +21,6 @@
     <ProjectReference Include="..\ImperialMarmoraria.Communication\ImperialMarmoraria.Communication.csproj" />
     <ProjectReference Include="..\ImperialMarmoraria.Exception\ImperialMarmoraria.Exception.csproj" />
     <ProjectReference Include="..\ImperialMarmoraria.Infrastructure\ImperialMarmoraria.Infrastructure.csproj" />
-    <ProjectReference Include="..\ImperialMarmoraria.Views\ImperialMarmoraria.Views.csproj" />
   </ItemGroup>
 
 </Project>

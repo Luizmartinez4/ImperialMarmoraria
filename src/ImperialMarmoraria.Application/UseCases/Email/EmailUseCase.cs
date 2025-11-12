@@ -10,8 +10,8 @@ namespace ImperialMarmoraria.Application.UseCases.Email
     {
         public Task SendEmailAsync(RequestEmailJson email, string subject, string message)
         {
-            var mail = "neamgames@gmail.com";
-            var pw = "izrc ijta wjjj njrh";
+            var mail = "luiz.martinez@sou.fae.br";
+            var pw = "mjne ebdl mshq seqj";
 
             var client = new SmtpClient("smtp.gmail.com", 587)
             {

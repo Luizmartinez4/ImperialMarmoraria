@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	<SelfContained>true</SelfContained>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +15,11 @@
     <Content Remove="wwwroot\js\Api\DeleteOrcamento.js" />
     <Content Remove="wwwroot\js\CheckAnimation.js" />
   </ItemGroup>
+
+	<ItemGroup>
+		<Content Remove="appsettings.json" />
+		<Content Remove="appsettings.Development.json" />
+	</ItemGroup>
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\js\Api\ApiGet\ApiGetOrcamentosByStatus.js" />
